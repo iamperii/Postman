@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f2f2f2;
+  --card: #ffffff;
+  --accent: rgb(255, 108, 55);
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 12px;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background:linear-gradient(360deg, rgb(250, 240, 218), #FFFFFF);
+  font-family: Inter,'Open Sans',sans-serif!important;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  padding: 18px 12px 10px;
+}
+
+.postmanLogo {
+  width: 54px;
+  height: auto;
+}
+
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px 18px;
+}
+
+.signInCard {
+  background: var(--card);
+  width: 100%;
+  max-width: 350px;
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.form-control {
+  min-height: 44px;
+  border-radius: 10px;
+}
+
+.signInBtn {
+  background: var(--accent);
+  border: 0;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.signInBtn:focus-visible {
+  outline: 3px solid rgba(255, 108, 55, 0.35);
+  outline-offset: 2px;
+}
+
+.social-login {
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  background: #e5e7eb;
+  flex: 1;
+}
+
+.socialLogins {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.socialBtn {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.socialBtn:hover {
+  background: #fafafa;
+}
+
+.socialBtn:focus-visible {
+  outline: 3px solid rgba(255, 108, 55, 0.25);
+  outline-offset: 2px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.language {
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.langBtn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 8px;
+  &:focus {
+    text-decoration: underline orange;
+  }
+}
+
+.langBtn:focus-visible {
+  outline: 3px solid rgba(255, 108, 55, 0.25);
+  outline-offset: 2px;
+}
+
+.footer {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 14px 12px 16px;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+@media (max-width: 576px) {
+  .postmanLogo {
+    width: 46px;
+  }
+
+  .signInCard {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .language {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .langBtn {
+    width: 100%;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+  }
+}
