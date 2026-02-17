@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postman - Reset Password</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="./forgot.css" />
+  </head>
+  <body>
+    <header class="brand">
+      <img
+        src="../../assets/postmanlogo.png"
+        alt="Postman Logo"
+        class="postmanLogo"
+      />
+    </header>
+    <main class="forgotPage">
+      <div class="forgotCard p-3 border rounded-2 card wd-4">
+        <div>
+          <h1 class="forgotTitle fw-semibold">Reset your password</h1>
+          <p class="forgotDesc">
+            Don’t worry, we’ve got your back! Just enter your email address and
+            we’ll send you a link to reset your password.
+          </p>
+        </div>
+        <form class="" autocomplete="on">
+          <div mb-4>
+            <label for="workEmail" class="form-label mb-1">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="workEmail"
+              name="email"
+              placeholder="name@example.com"
+            />
+          </div>
+          <span id="email-error" class="error"></span>
+          <button type="submit" class="orangeBtn w-100 text-white">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="text-center mt-3 links">
+        Return to
+        <a href="../signin/signin.html" class="links link text-decoration-none"
+          >Sign in</a
+        >
+      </div>
+    </main>
+  </body>
+</html>
