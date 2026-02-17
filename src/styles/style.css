@@ -59,7 +59,7 @@ body {
 .form-label {
   font-size: 14px;
 }
-.showPasswordBtn{
+.showPasswordBtn {
   font-size: 12px;
   text-decoration: underline;
   display: none;
@@ -215,6 +215,27 @@ input.invalid {
   font-size: 12px;
 }
 
+.signInError {
+  display: none;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #ffecec;
+  color: #111;
+}
+
+.signInError.success {
+  display: block;
+  background: #eaffea;
+}
+
+.signInError.error {
+  display: block;
+  background: #ffecec;
+}
+
 @media (max-width: 576px) {
   .signInCard {
     width: 100%;
@@ -251,7 +272,7 @@ input.invalid {
     min-height: 38px;
   }
 
-  .socialBtn{
+  .socialBtn {
     gap: 50px;
   }
   .socialBtn span {

@@ -1,7 +1,6 @@
-
 const form = document.querySelector("form");
 
-const loginInput = document.getElementById("email"); 
+const loginInput = document.getElementById("workEmail");
 const passwordInput = document.getElementById("password");
 
 const staySignedInInput = document.getElementById("staySignedIn");
@@ -12,36 +11,24 @@ const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 
 const HOME_URL = "../home/home.html";
-const STORAGE_KEY = "currentUser";   
+const STORAGE_KEY = "currentUser";
 
-function showToast(message, type = "error") {
-  const el = document.createElement("div");
-  el.textContent = message;
+const signInErrorBox = document.querySelector(".signInError");
 
-  el.style.position = "fixed";
-  el.style.left = "50%";
-  el.style.bottom = "24px";
-  el.style.transform = "translateX(-50%)";
-  el.style.padding = "12px 14px";
-  el.style.borderRadius = "10px";
-  el.style.fontSize = "14px";
-  el.style.zIndex = "9999";
-  el.style.maxWidth = "90vw";
-  el.style.boxShadow = "0 10px 30px rgba(0,0,0,.15)";
-  el.style.border = "1px solid rgba(0,0,0,.08)";
-  el.style.background = type === "success" ? "#eaffea" : "#ffecec";
-  el.style.color = "#111";
+function showMessage(message, type = "error") {
+  if (!signInErrorBox) return;
 
-  document.body.appendChild(el);
+  signInErrorBox.textContent = message;
+  signInErrorBox.classList.remove("error", "success");
+  signInErrorBox.classList.add(type);
+  signInErrorBox.style.display = "block";
+}
 
-  requestAnimationFrame(() => {
-    el.style.opacity = "1";
-  });
-
-  setTimeout(() => {
-    el.style.opacity = "0";
-    setTimeout(() => el.remove(), 200);
-  }, 2400);
+function clearMessage() {
+  if (!signInErrorBox) return;
+  signInErrorBox.textContent = "";
+  signInErrorBox.classList.remove("error", "success");
+  signInErrorBox.style.display = "none";
 }
 
 function validateLogin() {
@@ -74,7 +61,8 @@ if (passwordInput && showPasswordBtn) {
   });
 
   showPasswordBtn.addEventListener("click", () => {
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type =
+      passwordInput.type === "password" ? "text" : "password";
     showPasswordBtn.textContent =
       passwordInput.type === "password" ? "Show" : "Hide";
   });
@@ -101,6 +89,8 @@ function loginMatches(storedUser, loginValue, passwordValue) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  clearMessage(); 
+
   const ok1 = validateLogin();
   const ok2 = validatePassword();
   if (!ok1 || !ok2) return;
@@ -108,27 +98,25 @@ form.addEventListener("submit", (e) => {
   const storedUser = getStoredUser();
 
   if (!storedUser) {
-    showToast("No account found. Please sign up first.", "error");
+    showMessage("No account found. Please sign up first.", "error");
     return;
   }
 
   const isOk = loginMatches(storedUser, loginInput.value, passwordInput.value);
 
   if (!isOk) {
-    showToast("Incorrect email/username or password.", "error");
+    showMessage("Incorrect email/username or password.", "error");
     return;
   }
 
   const sessionKey = "isLoggedIn";
   const remember = staySignedInInput?.checked ?? false;
 
-  if (remember) {
-    localStorage.setItem(sessionKey, "true");
-  } else {
-    sessionStorage.setItem(sessionKey, "true");
-  }
+  if (remember) localStorage.setItem(sessionKey, "true");
+  else sessionStorage.setItem(sessionKey, "true");
 
-  showToast("Signed in successfully.", "success");
+  showMessage("Signed in successfully.", "success");
 
   window.location.href = HOME_URL;
 });
+

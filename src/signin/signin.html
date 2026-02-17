@@ -27,6 +27,7 @@
         <h1 class="title text-center fw-bold m-0">Sign in to Postman</h1>
 
         <form class="mt-3" autocomplete="on">
+          <div class="signInError"></div>
           <div class="mb-3">
             <label for="email" class="form-label mb-1">Email or username</label>
             <input
@@ -69,13 +70,18 @@
             </div>
 
             <div class="col-12 col-sm-6 text-sm-end">
-              <a href="#" class="forgotpass link text-decoration-none"
+              <a
+                href="../../forgot.html"
+                class="forgotpass link text-decoration-none"
                 >Forgot Password?</a
               >
             </div>
           </div>
 
-          <button type="submit" class="orangeBtn signInBtn text-white w-100 mt-3">
+          <button
+            type="submit"
+            class="orangeBtn signInBtn text-white w-100 mt-3"
+          >
             Sign In
           </button>
         </form>
