@@ -50,6 +50,9 @@
 
 .rightSection form {
   border: none;
+  label{
+    font-size: 12px;
+  }
 }
 
 .checkboxes {
