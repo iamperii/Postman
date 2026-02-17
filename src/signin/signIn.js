@@ -1,7 +1,7 @@
 
 const form = document.querySelector("form");
 
-const loginInput = document.getElementById("workEmail"); 
+const loginInput = document.getElementById("email"); 
 const passwordInput = document.getElementById("password");
 
 const staySignedInInput = document.getElementById("staySignedIn");
@@ -76,7 +76,7 @@ if (passwordInput && showPasswordBtn) {
   showPasswordBtn.addEventListener("click", () => {
     passwordInput.type = passwordInput.type === "password" ? "text" : "password";
     showPasswordBtn.textContent =
-      passwordInput.type === "password" ? "Show password" : "Hide password";
+      passwordInput.type === "password" ? "Show" : "Hide";
   });
 }
 

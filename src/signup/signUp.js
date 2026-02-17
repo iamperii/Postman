@@ -54,7 +54,7 @@ if (showPasswordBtn && passwordInput) {
 
   const updateShowBtnText = () => {
     showPasswordBtn.textContent =
-      passwordInput.type === "password" ? "Show password" : "Hide password";
+      passwordInput.type === "password" ? "Show" : "Hide";
   };
 
   passwordInput.addEventListener("focus", () => {
@@ -95,27 +95,60 @@ function validateEmail() {
 
 function validateUsername() {
   const v = usernameInput.value.trim();
+
   if (!v) {
     usernameError.textContent = "You must write a username.";
     return false;
   }
+
+  const onlyDigits = /^\d+$/.test(v);
+  if (onlyDigits) {
+    usernameError.textContent = "Username cannot be only numbers.";
+    return false;
+  }
+
   usernameError.textContent = "";
   return true;
 }
 
 function validatePassword() {
   const v = passwordInput.value.trim();
+
   if (v.length < 8) {
     passwordError.textContent = "Use a password that is at least 8 characters.";
     return false;
   }
+
+  const hasUpperLowerNumber = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/.test(v);
+  if (!hasUpperLowerNumber) {
+    passwordError.textContent =
+      "Password must include uppercase, lowercase letters and numbers.";
+    return false;
+  }
+
   passwordError.textContent = "";
   return true;
 }
 
+function validateUsernamePasswordnotSame() {
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
+
+  if (!username || !password) return true;
+
+  if (username.toLowerCase() === password.toLowerCase()) {
+    passwordError.textContent = "Password and username cannot be the same.";
+    return false;
+  }
+  return true;
+}
 mailInput.addEventListener("blur", validateEmail);
-usernameInput.addEventListener("blur", validateUsername);
-passwordInput.addEventListener("blur", validatePassword);
+usernameInput.addEventListener("blur", () => {
+  (validateUsername(), validateUsernamePasswordnotSame());
+});
+passwordInput.addEventListener("blur", () => {
+  (validatePassword(), validateUsernamePasswordnotSame());
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -123,8 +156,9 @@ form.addEventListener("submit", (e) => {
   const okEmail = validateEmail();
   const okUsername = validateUsername();
   const okPassword = validatePassword();
+  const okNotSame = validateUsernamePasswordnotSame();
 
-  if (!okEmail || !okUsername || !okPassword) {
+  if (!okEmail || !okUsername || !okPassword || !okNotSame) {
     showToast("Please fix the errors in the form.", "error");
     return;
   }
