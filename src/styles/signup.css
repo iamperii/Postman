@@ -23,7 +23,7 @@
 }
 
 .benefits {
-  list-style-image: url("../../assets/star.svg");
+  list-style-image: url("../assets/star.svg");
   padding-left: 22px;
   margin: 8px 0 16px;
   font-size: 16px;
