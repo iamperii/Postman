@@ -186,8 +186,14 @@ select {
 
 .error {
   color: red;
-  font-size: 12px;
-  display: none;
+  font-size: 10px;
+  line-height: 1.2;
+  margin-top: 4px;
+  display: block !important;
+}
+
+.error:empty {
+  display: none !important;
 }
 
 input.invalid {
@@ -245,4 +251,8 @@ input.invalid {
   .socialBtn span {
     font-size: 12.5px;
   }
+}
+
+.form-control:has(+ .error:not(:empty)) {
+  border-color: red;
 }

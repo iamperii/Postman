@@ -10,15 +10,15 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/signup.css" />
   </head>
 
   <body>
     <main class="signupPage">
       <section class="leftSection">
         <img
-          src="./assets/postmanlogo.png"
+          src="../../assets/postmanlogo.png"
           alt="Postman Logo"
           class="postmanLogo"
         />
@@ -33,7 +33,7 @@
         </ul>
 
         <img
-          src="./assets/signupImage.svg"
+          src="../../assets/signupImage.svg"
           alt="Sign Up Illustration"
           class="signupImage"
         />
@@ -43,8 +43,8 @@
         <div class="signupCard p-3 border rounded-2">
           <h1 class="title text-center fw-bold m-0">Create Postman account</h1>
 
-          <form class="mt-3" autocomplete="on" onsubmit="submitSignup()">
-            <div class="mb-3">
+          <form class="mt-3" autocomplete="on" onsubmit="submitSignup">
+            <div class="mb-4">
               <label for="workEmail" class="form-label mb-1">Work mail</label>
               <input
                 type="email"
@@ -52,9 +52,9 @@
                 id="workEmail"
                 name="email"
                 placeholder="name@example.com"
-                required
+
               />
-              <span id="name-error" class="error"></span>
+              <span id="email-error" class="error"></span>
             </div>
 
             <div class="mb-3">
@@ -65,7 +65,7 @@
                 id="username"
                 name="username"
                 placeholder="your_username"
-                required
+
               />
               <span id="name-error" class="error"></span>
             </div>
@@ -78,9 +78,9 @@
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                required
+
               />
-              <span id="name-error" class="error"></span>
+              <span id="password-error" class="error"></span>
             </div>
 
             <!-- TERMS IN COMMENT -->
@@ -127,7 +127,7 @@
                 <button type="button" class="socialBtn border rounded-2">
                   <img
                     class="social-icon"
-                    src="./assets/google.png"
+                    src="../../assets/google.png"
                     alt="Google Logo"
                   />
                   <span>Sign in with Google</span>
@@ -136,7 +136,7 @@
                 <button type="button" class="socialBtn border rounded-2">
                   <img
                     class="social-icon"
-                    src="./assets/github.png"
+                    src="../../assets/github.png"
                     alt="Github Logo"
                   />
                   <span>Sign in with Github</span>
@@ -153,7 +153,7 @@
           </form>
         </div>
         <p class="signInbtn">
-          Already have an account? <a href="signin.html" class="text-decoration-none">Sign in </a>
+          Already have an account? <a href="../signin/signin.html" class="text-decoration-none">Sign in </a>
         </p>
       </section>
     </main>
@@ -174,4 +174,5 @@
       >
     </footer> -->
   </body>
+  <script src="../scripts/script.js"></script>
 </html>
