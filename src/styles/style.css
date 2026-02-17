@@ -59,6 +59,12 @@ body {
 .form-label {
   font-size: 14px;
 }
+.showPasswordBtn{
+  font-size: 12px;
+  text-decoration: underline;
+  display: none;
+  cursor: pointer;
+}
 
 .form-control {
   min-height: 40px;
@@ -67,7 +73,7 @@ body {
   border-radius: 10px;
 }
 
-.signInBtn {
+.orangeBtn {
   background: var(--accent);
   border: 0;
   border-radius: 8px;
@@ -76,7 +82,7 @@ body {
   font-weight: 600;
 }
 
-.signInBtn:focus-visible {
+.orangeBtn:focus-visible {
   outline: 3px solid rgba(255, 108, 55, 0.35);
   outline-offset: 2px;
 }

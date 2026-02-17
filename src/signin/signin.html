@@ -32,14 +32,18 @@
             <input
               type="email"
               class="form-control"
-              id="email"
+              id="workEmail"
               name="email"
               placeholder="name@example.com"
             />
+            <span id="email-error" class="error"></span>
           </div>
 
           <div class="mb-2">
-            <label for="password" class="form-label">Password</label>
+            <div class="d-flex justify-content-between">
+              <label for="password" class="form-label mb-1">Password</label>
+              <span class="showPasswordBtn">Show password</span>
+            </div>
             <input
               type="password"
               class="form-control"
@@ -47,6 +51,7 @@
               name="password"
               placeholder="Enter your password"
             />
+            <span id="password-error" class="error"></span>
           </div>
 
           <div class="row g-2 align-items-center mt-1">
@@ -70,7 +75,7 @@
             </div>
           </div>
 
-          <button type="submit" class="signInBtn text-white w-100 mt-3">
+          <button type="submit" class="orangeBtn signInBtn text-white w-100 mt-3">
             Sign In
           </button>
         </form>
@@ -130,5 +135,5 @@
         >
       </footer> -->
   </body>
-    <script src="../scripts/script.js"></script>
+  <script src="./signIn.js"></script>
 </html>
