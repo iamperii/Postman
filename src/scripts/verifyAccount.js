@@ -1,36 +1,31 @@
 const STORAGE_KEY = "currentUser";
 const TEST_CODE = "123456";
-const SIGN_IN = "../html/signin.html";
+const CHOOSE_ROLE = "../html/chooseRole.html";
 
 const signedEmailEl = document.querySelector(".signedEmail");
 const form = document.querySelector(".form");
 const codeInput = document.getElementById("digitCode");
 const errorEl = document.getElementById("email-error");
 const verifyBtn = document.querySelector(".orangeBtn");
+const signInErrorBox = document.querySelector(".signInError");
 
 const resendLink = document.querySelector(".resendLink");
 const resendTimerEl = document.querySelector(".resendTimer");
 
-function showToast(message, type = "error") {
-  const el = document.createElement("div");
-  el.textContent = message;
+function showMessage(message, type = "error") {
+  if (!signInErrorBox) return;
 
-  el.style.position = "fixed";
-  el.style.left = "50%";
-  el.style.bottom = "24px";
-  el.style.transform = "translateX(-50%)";
-  el.style.padding = "12px 14px";
-  el.style.borderRadius = "10px";
-  el.style.fontSize = "14px";
-  el.style.zIndex = "9999";
-  el.style.maxWidth = "90vw";
-  el.style.boxShadow = "0 10px 30px rgba(0,0,0,.15)";
-  el.style.border = "1px solid rgba(0,0,0,.08)";
-  el.style.background = type === "success" ? "#eaffea" : "#ffecec";
-  el.style.color = "#111";
+  signInErrorBox.textContent = message;
+  signInErrorBox.classList.remove("error", "success");
+  signInErrorBox.classList.add(type);
+  signInErrorBox.style.display = "block";
+}
 
-  document.body.appendChild(el);
-  setTimeout(() => el.remove(), 2400);
+function clearMessage() {
+  if (!signInErrorBox) return;
+  signInErrorBox.textContent = "";
+  signInErrorBox.classList.remove("error", "success");
+  signInErrorBox.style.display = "none";
 }
 
 function getCurrentUser() {
@@ -103,15 +98,15 @@ function startResendCooldown(seconds = 30) {
 (function init() {
   const user = getCurrentUser();
   if (!user?.email) {
-    showToast("No signed email found. Please sign up again.", "error");
-    setTimeout(() => (window.location.href = SIGN_IN), 100);
+    showMessage("No signed email found. Please sign up again.", "error");
+    setTimeout(() => (window.location.href = CHOOSE_ROLE), 300);
     return;
   }
   signedEmailEl.textContent = user.email;
 
   verifyBtn.disabled = true;
-
   setResendDisabled(false);
+  clearMessage();
 })();
 
 codeInput.addEventListener("input", () => {
@@ -119,6 +114,7 @@ codeInput.addEventListener("input", () => {
   if (codeInput.value !== cleaned) codeInput.value = cleaned;
 
   setError("");
+  clearMessage();
   setVerifyEnabled();
 });
 
@@ -133,16 +129,17 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const code = codeInput.value.trim();
+  clearMessage();
 
   if (code.length !== 6) {
     setError("Please enter the 6 digit code.");
-    showToast("Code must be 6 digits.", "error");
+    showMessage("Code must be 6 digits.", "error");
     return;
   }
 
   if (code === TEST_CODE) {
     setError("");
-    showToast("Verified successfully.", "success");
+    showMessage("Verified successfully.", "success");
 
     const user = getCurrentUser();
     if (user) {
@@ -151,14 +148,14 @@ form.addEventListener("submit", (e) => {
     }
 
     setTimeout(() => {
-      window.location.href = SIGN_IN;
+      window.location.href = CHOOSE_ROLE;
     }, 400);
 
     return;
   }
 
   setError("Wrong code. Try again or resend the code.");
-  showToast("Wrong verification code.", "error");
+  showMessage("Wrong verification code.", "error");
 
   startResendCooldown(30);
 });
@@ -168,7 +165,8 @@ resendLink?.addEventListener("click", (e) => {
 
   if (Date.now() < resendLockedUntil) return;
 
-  showToast("Verification code resent (test).", "success");
+  clearMessage();
+  showMessage("Verification code resent (test).", "success");
 
   startResendCooldown(30);
 });
