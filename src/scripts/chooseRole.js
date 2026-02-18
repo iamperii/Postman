@@ -26,7 +26,21 @@ function setContinueEnabled(enabled) {
   continueBtn.setAttribute("aria-disabled", String(!enabled));
 }
 
-setContinueEnabled(false);
+function isFormValid() {
+  const nameOk = (nameInput?.value || "").trim().length > 0;
+  const roleOk = selectedRole.trim().length > 0;
+  return nameOk && roleOk;
+}
+
+function syncContinueState() {
+  setContinueEnabled(isFormValid());
+}
+
+syncContinueState();
+
+nameInput?.addEventListener("input", () => {
+  syncContinueState();
+});
 
 roleButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -36,7 +50,7 @@ roleButtons.forEach((btn) => {
     btn.classList.add("is-selected");
 
     selectedRole = btn.textContent.trim();
-    setContinueEnabled(true);
+    syncContinueState();
   });
 });
 
@@ -50,22 +64,23 @@ roleButtons.forEach((btn) => {
     roleButtons.forEach((b) => {
       if (b.textContent.trim() === user.role) b.classList.add("is-selected");
     });
-    setContinueEnabled(true);
   }
+
+  syncContinueState();
 })();
 
 continueBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (!selectedRole) {
-    setContinueEnabled(false);
+  if (!isFormValid()) {
+    syncContinueState();
     return;
   }
 
   const name = (nameInput?.value || "").trim();
 
   saveUserPatch({
-    name,                 
+    name,
     role: selectedRole,
     roleUpdatedAt: new Date().toISOString(),
   });
