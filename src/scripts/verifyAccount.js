@@ -12,17 +12,7 @@ const signInErrorBox = document.querySelector(".signInError");
 const resendLink = document.querySelector(".resendLink");
 const resendTimerEl = document.querySelector(".resendTimer");
 
-const pageLoader = document.querySelector(".pageLoader");
-
-function showLoader() {
-  pageLoader?.classList.add("is-show");
-  pageLoader?.setAttribute("aria-hidden", "false");
-}
-
-function hideLoader() {
-  pageLoader?.classList.remove("is-show");
-  pageLoader?.setAttribute("aria-hidden", "true");
-}
+const verifyBtnText = verifyBtn ? verifyBtn.textContent : "";
 
 function showMessage(message, type = "error") {
   if (!signInErrorBox) return;
@@ -60,6 +50,21 @@ function normalizeDigits(value) {
 function setVerifyEnabled() {
   const v = codeInput.value.trim();
   verifyBtn.disabled = v.length !== 6;
+}
+
+function setBtnLoading(isLoading) {
+  if (!verifyBtn) return;
+
+  if (isLoading) {
+    verifyBtn.disabled = true;
+    verifyBtn.setAttribute("aria-busy", "true");
+    verifyBtn.innerHTML =
+      '<span class="btnSpinner" aria-hidden="true"></span><span class="visually-hidden">Loading</span>';
+  } else {
+    verifyBtn.removeAttribute("aria-busy");
+    verifyBtn.textContent = verifyBtnText;
+    setVerifyEnabled();
+  }
 }
 
 let resendInterval = null;
@@ -158,7 +163,7 @@ form.addEventListener("submit", (e) => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
     }
 
-    showLoader();
+    setBtnLoading(true);
 
     setTimeout(() => {
       window.location.href = CHOOSE_ROLE;
