@@ -1,11 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/chooseRole.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+
     <title>Postman - Welcome</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main class="welcome-container">
+      <div class="brand">
+        <img
+          src="../assets/postmanlogo.png"
+          alt="Postman Logo"
+          class="postmanLogo"
+        />
+      </div>
+      <div class="welcome">
+        <div class="welcomeHeader">
+          <h1>Welcome to Postman Tell us a bit about yourself.</h1>
+          <div>
+            <p class="cardDesc">What is your name?</p>
+            <input
+              type="text"
+              class="form-control border-none name-input"
+              placeholder="eg: John Doe"
+            />
+          </div>
+          <div class="options">
+            <p class="cardDesc fw-bolder">What best describes your role?</p>
+            <div class="options-btns">
+              <button class="option-button">Backend Developer</button>
+              <button class="option-button">Data Engineer</button>
+              <button class="option-button">DevOps Engineer</button>
+              <button class="option-button">Frontend Developer</button>
+              <button class="option-button">Fullstack Developer</button>
+              <button class="option-button">Student/Educator</button>
+              <button class="option-button">Quality Engineer/Tester</button>
+              <button class="option-button">Other</button>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="orangeBtn">Continue</button>
+      </div>
+    </main>
+  </body>
+  <script src="../scripts/chooseRole.js"></script>
 </html>

@@ -1,0 +1,143 @@
+.welcome-container {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(24px, 6vw, 120px);
+  padding: clamp(24px, 6vw, 100px) clamp(16px, 6vw, 80px);
+  min-height: 100vh;
+}
+
+.brand {
+  flex: 0 0 auto;
+}
+
+.postmanLogo {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+}
+
+.welcome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 720px;
+  min-height: 100%;
+}
+
+.welcomeHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.welcomeHeader h1 {
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.2;
+}
+
+.form-control {
+  border: 1px #6b7280 solid;
+  min-height: 40px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px !important;
+}
+
+.options-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.option-button {
+  padding: 10px 12px;
+  background-color: #fff;
+  border: 1px #6b7280 solid;
+  border-radius: 6px;
+  flex: 1 1 220px;      
+  min-width: 160px;     
+  text-align: left;
+}
+
+.option-button:focus,
+.option-button:focus-visible {
+  background-color: rgb(255, 108, 55);
+  border-color: rgb(255, 108, 55);
+  color: white;
+  outline: none;
+}
+
+.orangeBtn {
+  align-self: flex-end;
+  justify-self: flex-end;
+  min-width: 140px;
+  padding: 10px 18px;
+}
+
+@media (max-width: 992px) {
+  .welcome-container {
+    gap: 32px;
+  }
+
+  .postmanLogo {
+    max-width: 150px;
+  }
+
+  .option-button {
+    flex: 1 1 200px;
+  }
+}
+.orangeBtn.is-disabled,
+.orangeBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.option-button.is-selected {
+  background-color: rgb(255, 108, 55);
+  border-color: rgb(255, 108, 55);
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .welcome-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  .brand {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .welcome {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .option-button {
+    text-align: center;
+  }
+
+  .orangeBtn {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 360px) {
+  .welcomeHeader h1 {
+    font-size: 20px;
+  }
+
+  .option-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
