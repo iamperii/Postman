@@ -1,6 +1,95 @@
-.options-inputs{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 1px solid #E0E0E0   ;
+.options-inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.options {
+	padding: 8px 20px;
+	border-radius: 6px;
+	input {
+		padding: 0px !important;
+		border-radius: 0px !important;
+	}
+}
+.form-control {
+	padding: 10px 20px !important;
+	border: none;
+	border-bottom: 1px solid #e0e0e0;
+	&:focus {
+		border: none !important;
+	}
+}
+.options {
+	background: white;
+}
+
+.cardDesc {
+	margin-top: 0px !important;
+}
+.inviteTeam {
+	margin-bottom: 0px;
+}
+.copyInviteLink {
+	cursor: pointer;
+}
+
+.field-error {
+	font-size: 12px;
+	color: #dc3545;
+}
+
+.options,
+.form-control {
+	max-width: 100%;
+}
+
+@media (max-width: 575.98px) {
+	.welcome-container {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	.options {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	.form-control {
+		padding-left: 14px !important;
+		padding-right: 14px !important;
+	}
+
+	.options-inputs {
+		gap: 8px;
+	}
+
+	.welcomeHeader h1 {
+		font-size: 24px;
+		line-height: 1.2;
+	}
+
+	.cardDesc {
+		font-size: 14px;
+	}
+
+	#inviteLimitMsg {
+		display: block;
+		margin-top: 6px;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+	.welcome-container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.options {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.options-inputs {
+		gap: 10px;
+	}
 }
