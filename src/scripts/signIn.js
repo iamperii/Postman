@@ -10,7 +10,7 @@ const showPasswordBtn = document.querySelector(".showPasswordBtn");
 const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 
-const HOME_URL = "../home/home.html";
+const HOME_URL = "../html/home.html"; 
 const STORAGE_KEY = "currentUser";
 
 const signInErrorBox = document.querySelector(".signInError");

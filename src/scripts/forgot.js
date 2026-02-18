@@ -49,5 +49,5 @@ form.addEventListener("submit", (e) => {
   const ok = validateEmail();
   if (!ok) return;
 
-  window.location.href = "../reset/resetPassword.html";
+  window.location.href = "../html/resetPassword.html";
 });

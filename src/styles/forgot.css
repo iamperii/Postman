@@ -8,7 +8,7 @@ header.brand {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: clamp(24px, 40px, 80px);
+	/* gap: clamp(24px, 40px, 80px); */
 	padding: clamp(20px, 5vw, 40px) 16px 24px;
 }
 
