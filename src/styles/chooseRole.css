@@ -1,15 +1,12 @@
-body{
-  background:
-    radial-gradient(900px 500px at 85% 15%, rgba(255, 180, 210, .22) 0%, rgba(255,180,210,0) 60%),
-    radial-gradient(1000px 600px at 20% 0%, rgba(255, 210, 150, .35) 0%, rgba(255,210,150,0) 65%),
-    linear-gradient(180deg, #fde7d2 0%, #fce9dc 45%, #f7e6f1 100%) !important;
+body {
+  background: linear-gradient(90deg, rgb(250, 240, 218), #ffffff) !important;
   background-attachment: fixed;
 }
 
 .welcome-container {
   display: flex;
   align-items: flex-start;
-  gap: clamp(24px, 20vw, 200px);
+  gap: clamp(24px, 20vw, 400px);
   padding: clamp(24px, 6vw, 100px) clamp(16px, 6vw, 60px);
 }
 
@@ -27,7 +24,6 @@ body{
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
   height: 100%;
   width: 100%;
   max-width: 720px;
@@ -58,14 +54,14 @@ body{
 .options-btns {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 
 .option-button {
   flex: 0 0 auto;
   align-self: flex-end;
-  padding: 12px 18px;
-  max-width: 100%;
+  padding: 14px 20px;
+  max-width: fit-content;
   white-space: nowrap;
   padding: 12px 14px;
   background: #fff;
