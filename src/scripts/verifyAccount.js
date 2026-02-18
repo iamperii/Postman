@@ -12,6 +12,18 @@ const signInErrorBox = document.querySelector(".signInError");
 const resendLink = document.querySelector(".resendLink");
 const resendTimerEl = document.querySelector(".resendTimer");
 
+const pageLoader = document.querySelector(".pageLoader");
+
+function showLoader() {
+  pageLoader?.classList.add("is-show");
+  pageLoader?.setAttribute("aria-hidden", "false");
+}
+
+function hideLoader() {
+  pageLoader?.classList.remove("is-show");
+  pageLoader?.setAttribute("aria-hidden", "true");
+}
+
 function showMessage(message, type = "error") {
   if (!signInErrorBox) return;
 
@@ -139,7 +151,6 @@ form.addEventListener("submit", (e) => {
 
   if (code === TEST_CODE) {
     setError("");
-    showMessage("✅ Success!", "success");
 
     const user = getCurrentUser();
     if (user) {
@@ -147,9 +158,11 @@ form.addEventListener("submit", (e) => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
     }
 
+    showLoader();
+
     setTimeout(() => {
       window.location.href = CHOOSE_ROLE;
-    }, 400);
+    }, 700);
 
     return;
   }
