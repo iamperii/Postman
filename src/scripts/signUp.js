@@ -170,7 +170,6 @@ form.addEventListener("submit", (e) => {
   };
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(currentUser));
-  showToast("Account created successfully.", "success");
 
   setTimeout(() => {
     window.location.href = VERIFY_URL;
