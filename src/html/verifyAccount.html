@@ -18,7 +18,6 @@
     <main class="verifyPage">
       <div class="verifyCard border rounded-2 card wd-4">
         <h1 class="cardTitle">Verify Account</h1>
-        <div class="signInError"></div>
         <p class="cardDesc mb-0">Verification code</p>
         <p class="cardMessage">We have sent a verification code to</p>
         <p class="signedEmail cardMessage"></p>
@@ -31,7 +30,7 @@
               name="digitCode"
               placeholder="Enter 6 digit code"
             />
-            <span id="email-error" class="error"></span>
+            <div class="signInError"></div>
           </div>
           <button type="submit" class="orangeBtn w-100 text-white" disabled>
             Verify Account

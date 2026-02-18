@@ -235,6 +235,7 @@ input.invalid {
 
 .signInError.success {
   display: block;
+  padding: 20px;
   background: #eaffea;
 }
 

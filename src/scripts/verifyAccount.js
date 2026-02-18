@@ -139,7 +139,7 @@ form.addEventListener("submit", (e) => {
 
   if (code === TEST_CODE) {
     setError("");
-    showMessage("Verified successfully.", "success");
+    showMessage("✅ Success!", "success");
 
     const user = getCurrentUser();
     if (user) {
