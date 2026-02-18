@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postman - Verify Account</title>
+    <link rel="stylesheet" href="../styles/verifyAccount.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <header class="brand">
+      <img
+        src="../assets/postmanlogo.png"
+        alt="Postman Logo"
+        class="postmanLogo"
+      />
+    </header>
+    <main class="verifyPage">
+      <div class="verifyCard border rounded-2 card wd-4">
+        <h1 class="cardTitle">Verify Account</h1>
+        <p class="cardDesc mb-0">Verification code</p>
+        <p class="cardMessage">We have sent a verification code to</p>
+        <p class="signedEmail cardMessage"></p>
+        <form class="form" autocomplete="on">
+          <div class="verifyForm">
+            <input
+              type="text"
+              class="form-control"
+              id="digitCode"
+              name="digitCode"
+              placeholder="Enter 6 digit code"
+            />
+            <span id="email-error" class="error"></span>
+          </div>
+          <button type="submit" class="orangeBtn w-100 text-white" disabled>
+            Verify Account
+          </button>
+        </form>
+      </div>
+    </main>
+    <p class="mt-2 mb-0 resendRow">
+      <span>Didn't receive the email? </span>
+      <a href="#" class="resendLink">Resend verification code</a>
+      <span class="resendTimer ms-2"></span>
+    </p>
+  </body>
+  <script src="../scripts/verifyAccount.js"></script>
+</html>

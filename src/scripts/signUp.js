@@ -10,7 +10,7 @@ const mailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 
 const STORAGE_KEY = "currentUser";
-const SIGNIN_URL = "../signin/signin.html";
+const VERIFY_URL = "../html/verifyAccount.html";
 
 let usernameManuallyEdited = false;
 
@@ -173,6 +173,6 @@ form.addEventListener("submit", (e) => {
   showToast("Account created successfully.", "success");
 
   setTimeout(() => {
-    window.location.href = SIGNIN_URL;
+    window.location.href = VERIFY_URL;
   }, 400);
 });
