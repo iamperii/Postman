@@ -1,0 +1,6 @@
+.options-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #E0E0E0   ;
+}
