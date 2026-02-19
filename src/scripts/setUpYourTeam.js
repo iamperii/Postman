@@ -101,6 +101,10 @@ function updateInviteLimitUI() {
 
   addMoreBtn.disabled = reached;
   inviteLimitMsg.style.display = reached ? "inline" : "none";
+
+  document
+    .querySelector(".add-more-row")
+    ?.classList.toggle("is-disabled", reached);
 }
 
 function addInviteInput() {
