@@ -1,20 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../styles/layout.css" />
-    <title>Home</title>
-  </head>
-  <body>
-    <div id="app-header"></div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preload" href="../../styles/layout.css" as="style" />
+		<link rel="stylesheet" href="../../styles/layout.css" />
 
-    <div class="layout">
-      <div id="app-sidebar"></div>
+		<link rel="preload" href="../../styles/header.css" as="style" />
+		<link rel="stylesheet" href="../../styles/header.css" />
 
-      <main id="app-content"></main>
-    </div>
-    <div id="app-footer"></div>
-    <script type="module" src="../../scripts/layouts/app.js"></script>
-  </body>
+		<link rel="preload" href="../../styles/sidebar.css" as="style" />
+		<link rel="stylesheet" href="../../styles/sidebar.css" />
+
+		<link rel="preload" href="../../styles/footer.css" as="style" />
+		<link rel="stylesheet" href="../../styles/footer.css" />
+
+		<link rel="preload" href="../../styles/workspacemain.css" as="style" />
+		<link rel="stylesheet" href="../../styles/workspacemain.css" />
+
+		<title>Home</title>
+	</head>
+	<body>
+		<div id="app-header"></div>
+
+		<div class="layout">
+			<div id="app-sidebar"></div>
+
+			<main id="app-content"></main>
+		</div>
+		<div id="app-footer"></div>
+		<script type="module" src="../../scripts/layouts/app.js"></script>
+	</body>
 </html>

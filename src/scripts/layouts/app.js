@@ -49,7 +49,7 @@ async function init() {
       loadPartial("#app-header", "../partials/header.html"),
       loadPartial("#app-sidebar", "../partials/sidebar.html"),
       loadPartial("#app-footer", "../partials/footer.html"),
-      loadPartial("#app-content", "../../html/partials/ workspacemain.html"),
+      loadPartial("#app-content", "../../html/partials/workspacemain.html"),
     ]);
 
     console.log("Partials loaded.");
