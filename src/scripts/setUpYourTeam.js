@@ -158,5 +158,5 @@ form.addEventListener('submit', (e) => {
 
 	localStorage.setItem(STORAGE_KEY, JSON.stringify(onboarding));
 
-	window.location.href = 'HOME_URL';
+	window.location.href = HOME_URL;
 });
