@@ -1,0 +1,289 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
+<link rel="stylesheet" href="../../styles/sidebar.css" />
+<link rel="stylesheet" href="../../styles/style.css" />
+
+<body class="bg-white">
+  <div class="sidebar-head d-flex align-items-center gap-2">
+    <div class="dashboard-username text-truncate">username's Workspace</div>
+    <div>
+      <button
+        class="btn btn-light dashboard-pillbtn sidebar-actions"
+        type="button"
+      >
+        New
+      </button>
+      <button
+        class="btn btn-light dashboard-pillbtn sidebar-actions"
+        type="button"
+      >
+        Import
+      </button>
+    </div>
+  </div>
+  <div class="dashboard-line p-0"></div>
+  <div class="dashboard-shell">
+    <aside class="dashboard-leftbar border-end">
+      <div class="dashboard-leftbar-top">
+        <button
+          class="btn dashboard-leftbar-btn active d-flex flex-column align-items-center gap-1"
+          type="button"
+          aria-label="Collections"
+          data-dashboard-tab="collections"
+        >
+          <i class="bi bi-collection"></i>
+          <span class="text-muted sidebar-small-desc">Collections</span>
+        </button>
+
+        <button
+          class="btn dashboard-leftbar-btn d-flex flex-column align-items-center gap-1"
+          type="button"
+          aria-label="Environments"
+          data-dashboard-tab="environments"
+        >
+          <i class="bi bi-cloud"></i>
+          <span class="text-muted sidebar-small-desc">Environments</span>
+        </button>
+
+        <button
+          class="btn dashboard-leftbar-btn d-flex flex-column align-items-center gap-1"
+          type="button"
+          aria-label="History"
+          data-dashboard-tab="history"
+        >
+          <i class="bi bi-clock-history"></i>
+          <span class="text-muted sidebar-small-desc">History</span>
+        </button>
+
+        <button
+          class="btn dashboard-leftbar-btn d-flex flex-column align-items-center gap-1"
+          type="button"
+          aria-label="Flows"
+          data-dashboard-tab="flows"
+        >
+          <i class="bi bi-diagram-3"></i>
+          <span class="text-muted sidebar-small-desc">Flows</span>
+        </button>
+        <div class="dashboard-line"></div>
+
+        <button
+          class="btn dashboard-leftbar-btn d-flex flex-column align-items-center gap-1"
+          type="button"
+          aria-label="Flows"
+          data-dashboard-tab="flows"
+        >
+          <span class="material-symbols-outlined text-muted"> view_cozy </span>
+        </button>
+      </div>
+
+      <div class="dashboard-leftbar-bottom">
+        <button
+          class="btn dashboard-leftbar-btn"
+          type="button"
+          aria-label="More"
+          data-dashboard-tab="more"
+        >
+          <i class="bi bi-grid-3x3-gap"></i>
+        </button>
+      </div>
+    </aside>
+
+    <aside class="dashboard-sidebar border-end">
+      <div class="dashboard-sidebar-head">
+        <div class="d-flex align-items-center justify-content-between gap-2">
+          <button
+            class="btn dashboard-ghostbtn d-lg-none"
+            type="button"
+            id="dashboardCloseSidebar"
+            aria-label="Close sidebar"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <div class="dashboard-sidebar-actions">
+          <div class="dashboard-sidebar-actions">
+            <div class="dashboard-iconrow ms-auto">
+              <i class="bi bi-plus-lg"></i>
+
+              <div class="search-input">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" placeholder="Search collections"  />
+              </div>
+
+              <button
+                class="btn dashboard-iconbtn"
+                type="button"
+                aria-label="Add"
+              ></button>
+              <button
+                class="btn dashboard-iconbtn"
+                type="button"
+                aria-label="Search"
+                id="dashboardSidebarSearchBtn"
+              ></button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="dashboard-searchwrap d-none"
+          id="dashboardSidebarSearchWrap"
+        >
+          <div class="input-group dashboard-searchgroup">
+            <span class="input-group bg-transparent dashboard-searchicon">
+              <i class="bi bi-search"></i>
+            </span>
+            <input
+              type="text"
+              class="form-control dashboard-searchinput"
+              placeholder="Search collections"
+              id="dashboardSidebarSearchInput"
+            />
+            <button
+              class="btn dashboard-clearbtn"
+              type="button"
+              id="dashboardClearSearch"
+            >
+              <i class="bi bi-x-circle"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-sidebar-body">
+        <div class="dashboard-panel active" data-dashboard-panel="collections">
+          <div class="dashboard-section">
+            <div class="dashboard-section-title">Collections</div>
+
+            <div class="dashboard-tree">
+              <button
+                class="btn dashboard-treeitem d-flex align-items-center justify-content-start gap-2"
+                type="button"
+                data-dashboard-open="collection-1"
+              >
+                <span class="dashboard-caret">
+                  <span class="material-symbols-outlined fs-6">
+                    chevron_right
+                  </span>
+                </span>
+
+                <span class="dashboard-treelabel text-truncate">
+                  My Collection
+                </span>
+              </button>
+
+              <div class="dashboard-treechildren d-none" id="collection-1">
+                <button class="btn dashboard-subitem" type="button">
+                  <span class="dashboard-subicon">
+                    <i class="bi bi-file-earmark-text"></i>
+                  </span>
+                  <span class="text-truncate">Requests</span>
+                </button>
+
+                <button class="btn dashboard-subitem" type="button">
+                  <span class="dashboard-subicon">
+                    <i class="bi bi-braces"></i>
+                  </span>
+                  <span class="text-truncate">APIs</span>
+                </button>
+
+                <button class="btn dashboard-subitem" type="button">
+                  <span class="dashboard-subicon">
+                    <i class="bi bi-key"></i>
+                  </span>
+                  <span class="text-truncate">Auth</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-divider"></div>
+        </div>
+
+        <div class="dashboard-panel" data-dashboard-panel="environments">
+          <div class="dashboard-section">
+            <div class="dashboard-section-title">Environments</div>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-plus-circle"></i>
+              </span>
+              <span>Create environment</span>
+            </button>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-folder2-open"></i>
+              </span>
+              <span>Manage environments</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="dashboard-panel" data-dashboard-panel="history">
+          <div class="dashboard-section">
+            <div class="dashboard-section-title">History</div>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-clock"></i>
+              </span>
+              <span>Recent requests</span>
+            </button>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-trash3"></i>
+              </span>
+              <span>Clear history</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="dashboard-panel" data-dashboard-panel="flows">
+          <div class="dashboard-section">
+            <div class="dashboard-section-title">Flows</div>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-diagram-2"></i>
+              </span>
+              <span>Open flows</span>
+            </button>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-plus-square"></i>
+              </span>
+              <span>Create flow</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="dashboard-panel" data-dashboard-panel="more">
+          <div class="dashboard-section">
+            <div class="dashboard-section-title">More</div>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-gear"></i>
+              </span>
+              <span>Preferences</span>
+            </button>
+            <button class="btn dashboard-linkrow" type="button">
+              <span class="dashboard-linkicon">
+                <i class="bi bi-info-circle"></i>
+              </span>
+              <span>About</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="dashboard-backdrop d-none" id="dashboardBackdrop"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../../scripts/sidebar.js"></script>
+</body>

@@ -110,7 +110,7 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 991.98px) {
+@media (min-width: 576px) and (max-width: 992px) {
   .welcome-container {
     padding-left: 16px;
     padding-right: 16px;

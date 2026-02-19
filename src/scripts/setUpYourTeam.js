@@ -1,7 +1,7 @@
 const STORAGE_KEY = "currentUser";
 const MAX_INVITES = 5;
 
-const HOME_URL = "../html/home.html";
+const HOME_URL = "../html/pages/home.html";
 
 const form = document.getElementById("teamForm");
 const teamNameInput = document.getElementById("teamName");
