@@ -1,23 +1,17 @@
-const searchInput = document.getElementById('pmSearch');
-
-window.addEventListener('keydown', (e) => {
-	const isMac = navigator.platform.toUpperCase().includes('MAC');
-	const isCmdK = isMac && e.metaKey && e.key.toLowerCase() === 'k';
-	const isCtrlK = !isMac && e.ctrlKey && e.key.toLowerCase() === 'k';
-
-	if (isCmdK || isCtrlK) {
-		e.preventDefault();
-		searchInput?.focus();
-	}
-});
-
-const searchGroup = document.querySelector('.dashboard-searchgroup');
-const overlay = document.getElementById('pmSearchOverlay');
-const panel = document.getElementById('pmSearchPanel');
+// header.js (REPLACE ALL)
 
 let overlayOpen = false;
 
-function positionSearchPanel() {
+function getEls() {
+	return {
+		searchInput: document.getElementById('pmSearch'),
+		searchGroup: document.querySelector('.dashboard-searchgroup'),
+		overlay: document.getElementById('pmSearchOverlay'),
+		panel: document.getElementById('pmSearchPanel'),
+	};
+}
+
+function positionSearchPanel(searchGroup, panel) {
 	if (!searchGroup || !panel) return;
 
 	const r = searchGroup.getBoundingClientRect();
@@ -31,70 +25,101 @@ function positionSearchPanel() {
 	panel.style.left = `${left}px`;
 	panel.style.width = `${width}px`;
 
-	// Height limit (so it doesn't go out of viewport)
 	const maxH = Math.max(220, window.innerHeight - top - 16);
 	panel.style.maxHeight = `${maxH}px`;
 }
 
 function openSearchOverlay() {
-	if (!overlay || !panel || overlayOpen) return;
+	const { searchGroup, overlay, panel } = getEls();
+	if (!overlay || !panel) return;
+
 	overlay.hidden = false;
 	overlayOpen = true;
-	positionSearchPanel();
+	positionSearchPanel(searchGroup, panel);
 }
 
 function closeSearchOverlay() {
-	if (!overlay || !overlayOpen) return;
+	const { overlay } = getEls();
+	if (!overlay) return;
+
 	overlay.hidden = true;
 	overlayOpen = false;
 }
 
-searchInput?.addEventListener('focus', () => {
-	openSearchOverlay();
-});
-
-searchInput?.addEventListener('click', () => {
-	openSearchOverlay();
-});
-
-// close on ESC
+// Ctrl/Cmd + K (query every time; header sonradan gəlsə də işləyir)
 window.addEventListener('keydown', (e) => {
-	if (!overlayOpen) return;
-	if (e.key === 'Escape') {
+	const isMac = navigator.platform.toUpperCase().includes('MAC');
+	const isCmdK = isMac && e.metaKey && e.key.toLowerCase() === 'k';
+	const isCtrlK = !isMac && e.ctrlKey && e.key.toLowerCase() === 'k';
+
+	if (isCmdK || isCtrlK) {
+		e.preventDefault();
+		const { searchInput } = getEls();
+		searchInput?.focus();
+		openSearchOverlay();
+	}
+
+	if (overlayOpen && e.key === 'Escape') {
 		e.preventDefault();
 		closeSearchOverlay();
-		searchInput?.blur();
+		getEls().searchInput?.blur();
 	}
 });
 
-// close on backdrop click
-overlay?.addEventListener('click', (e) => {
-	const t = e.target;
-	if (t && t.matches && t.matches('[data-pm-search-close]')) {
-		closeSearchOverlay();
-		searchInput?.blur();
-	}
-});
+// Focus/click delegation (listener input gəlmədən də işləyəcək)
+document.addEventListener(
+	'focusin',
+	(e) => {
+		if (e.target && e.target.id === 'pmSearch') openSearchOverlay();
+	},
+	true,
+);
 
-// keep open when clicking inside panel
-panel?.addEventListener('click', (e) => {
-	e.stopPropagation();
-});
+document.addEventListener(
+	'click',
+	(e) => {
+		const t = e.target;
+
+		// input click
+		if (t && t.id === 'pmSearch') {
+			openSearchOverlay();
+			return;
+		}
+
+		// backdrop click -> close
+		if (t && t.matches && t.matches('[data-pm-search-close]')) {
+			closeSearchOverlay();
+			getEls().searchInput?.blur();
+			return;
+		}
+	},
+	true,
+);
+
+// Keep open when clicking inside panel
+document.addEventListener(
+	'click',
+	(e) => {
+		const { panel } = getEls();
+		if (!panel) return;
+		if (panel.contains(e.target)) e.stopPropagation();
+	},
+	true,
+);
 
 // reposition on resize/scroll
 window.addEventListener('resize', () => {
-	if (overlayOpen) positionSearchPanel();
+	if (!overlayOpen) return;
+	const { searchGroup, panel } = getEls();
+	positionSearchPanel(searchGroup, panel);
 });
 
 window.addEventListener(
 	'scroll',
 	() => {
-		if (overlayOpen) positionSearchPanel();
+		if (!overlayOpen) return;
+		const { searchGroup, panel } = getEls();
+		positionSearchPanel(searchGroup, panel);
 	},
 	true,
-);
-console.log(
-	document.getElementById('pmSearchOverlay'),
-	document.getElementById('pmSearchPanel'),
-	document.getElementById('pmSearch'),
 );

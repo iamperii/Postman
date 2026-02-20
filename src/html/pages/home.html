@@ -38,6 +38,71 @@
 		</div>
 
 		<div id="app-footer"></div>
+		<div id="pmSearchOverlay" class="pm-search-overlay" hidden>
+			<div class="pm-search-backdrop" data-pm-search-close="1"></div>
+
+			<div
+				id="pmSearchPanel"
+				class="pm-search-panel"
+				role="dialog"
+				aria-modal="true"
+				aria-label="Search Postman Panel"
+			>
+				<div class="pm-search-panel-inner">
+					<div class="pm-search-filters">
+						<button class="pm-chip" type="button">
+							Workspace type <i class="bi bi-chevron-down fs-6"></i>
+						</button>
+						<button class="pm-chip" type="button">
+							Element type <i class="bi bi-chevron-down fs-6"></i>
+						</button>
+						<button class="pm-chip" type="button">
+							In <i class="bi bi-chevron-down fs-6"></i>
+						</button>
+						<button class="pm-chip" type="button">
+							By <i class="bi bi-chevron-down fs-6"></i>
+						</button>
+					</div>
+
+					<hr class="pm-search-divider" />
+
+					<div class="pm-search-actions">
+						<button class="pm-search-action" type="button">
+							<i class="bi bi-grid fs-6"></i>
+							<span>Find in Cowo John's Workspace</span>
+						</button>
+
+						<button class="pm-search-action" type="button">
+							<i class="bi bi-trash3 fs-6"></i>
+							<span>Find in My Collection</span>
+						</button>
+					</div>
+
+					<div class="pm-search-section-title">Recently viewed</div>
+					<div class="pm-search-recent">
+						<div class="pm-search-recent-item">
+							<span class="pm-method">GET</span>
+
+							<div class="pm-recent-main">
+								<span class="pm-recent-title">Get data</span>
+
+								<span class="pm-recent-sub">
+									<i class="bi bi-people"></i><span>Cowo John's Workspace</span>
+									<span class="pm-dot">/</span>
+									<i class="bi bi-folder2"></i><span>My Collection</span>
+									<span class="pm-dot">/</span>
+									<i class="bi bi-record-circle"></i><span>cowoxo2387</span>
+								</span>
+							</div>
+
+							<span class="pm-recent-time"
+								>Last viewed less than a minute ago</span
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script type="module" src="../../scripts/layouts/app.js"></script>
 		<script type="module" src="../../scripts/sidebar.js"></script>
