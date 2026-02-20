@@ -28,8 +28,9 @@
 
 .dashboard-searchgroup {
 	border: 1px solid #e5e7eb;
-	border-radius: 6px;
+	border-radius: 6px !important;
 	overflow: hidden;
+	font-size: 12px !important;
 	background: #fff;
 	color: #6b7280;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -38,22 +39,23 @@
 .dashboard-searchicon {
 	background: transparent;
 	border: 0;
-	padding-left: 14px;
-	padding-right: 8px;
+	border-radius: 5px !important;
+	padding: 4px 10px;
 	color: #6b7280;
 }
 
 .dashboard-searchinput {
 	border: 0;
-	padding: 10px 10px;
-	font-size: 14px;
+	padding: 8px !important;
+	border-radius: 4px !important;
+	font-size: 14px !important;
 }
 
 .dashboard-searchinput:focus {
 	box-shadow: none;
 }
 #pmNav {
-	gap: 200px;
+	gap: 80px;
 }
 .dashboard-kbd {
 	background: transparent;
@@ -74,8 +76,6 @@
 }
 
 .dashboard-iconbtn {
-	width: 36px;
-	height: 36px;
 	border-radius: 6px;
 	border: 1px solid transparent;
 	display: inline-flex;
@@ -86,9 +86,14 @@
 }
 
 .dashboard-iconbtn:hover {
-	background: #f3f4f6;
+	background: #ececee !important;
 }
-
+.dashhboard-iconbtn {
+	padding-right: 0px !important;
+}
+.dashboard-iconbtn:nth-child(2){
+	padding-left: 0px !important;
+}
 .dashboard-avatar {
 	width: 28px;
 	height: 28px;
@@ -99,9 +104,9 @@
 }
 
 .dashboard-invite {
-	border-radius: 4px;
-	padding: 0px 12px !important;
-	font-size: 12px;
+	border-radius: 4px !important;
+	padding: 1px 10px !important;
+	font-size: 14px !important;
 }
 #pmSearch {
 	border: none !important;
@@ -115,7 +120,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: clamp(10px, 2vw, 24px);
+	/* gap: clamp(10px, 200px, 60px); */
 	flex-wrap: wrap;
 }
 
@@ -125,6 +130,9 @@
 	margin-left: auto;
 	margin-right: auto;
 	min-width: 240px;
+}
+.orangeBtn {
+	padding: 6px 20px !important;
 }
 @media (max-width: 992px) {
 	#pmNav {
@@ -155,7 +163,6 @@
 	}
 
 	.dashboard-iconbtn {
-		width: 34px;
-		height: 34px;
+		height: 36px;
 	}
 }
