@@ -32,7 +32,7 @@
 			</div>
 
 			<!-- Right sidebar  -->
-			<aside
+			<!-- <aside
 				class="dashboard-rightbar"
 				aria-label="Right sidebar"
 				id="rightbar"
@@ -80,7 +80,7 @@
 						<i class="bi bi-info-circle"></i>
 					</button>
 				</div>
-			</aside>
+			</aside> -->
 		</div>
 
 		<div class="dashboard-workspace-head">
@@ -127,27 +127,21 @@
 		<div class="dashboard-main-content">
 			<div class="dashboard-main-grid">
 				<section class="dashboard-center">
-					<div class="dashboard-tabs">
+					<div class="dashboard-tabs" id="workspaceTabs">
 						<button
 							class="btn dashboard-tab active"
 							type="button"
-							data-dashboard-section="overview"
+							data-tab="overview"
 						>
-							Overview
+							<span class="tab-title">Overview</span>
 						</button>
-						<button
-							class="btn dashboard-tab"
-							type="button"
-							data-dashboard-section="updates"
-						>
-							Updates
+
+						<button class="btn dashboard-tab" type="button" data-tab="updates">
+							<span class="tab-title">Updates</span>
 						</button>
-						<button
-							class="btn dashboard-tab"
-							type="button"
-							data-dashboard-section="settings"
-						>
-							Settings
+
+						<button class="btn dashboard-tab" type="button" data-tab="settings">
+							<span class="tab-title">Settings</span>
 						</button>
 					</div>
 
@@ -221,7 +215,7 @@
 						</div>
 					</div>
 				</aside>
-				<aside class="dashboard-rightbar" aria-label="Right sidebar">
+				<!-- <aside class="dashboard-rightbar" aria-label="Right sidebar">
 					<button
 						class="btn dashboard-rightbar-btn"
 						type="button"
@@ -253,7 +247,9 @@
 					>
 						<i class="bi bi-info-circle"></i>
 					</button>
-				</aside>
+				</aside> -->
+
+				<div id="app-rightsidebar"></div>
 			</div>
 		</div>
 	</div>

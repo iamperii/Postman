@@ -11,7 +11,7 @@
 
 <body class="bg-white">
 	<div class="sidebar-head d-flex align-items-center gap-2">
-		<div class="d-flex gap-1">
+		<div class="d-flex gap-1 align-items-center jus">
 			<i class="bi bi-people"></i>
 			<div class="dashboard-username text-truncate">Username's Workspace</div>
 		</div>
@@ -31,6 +31,7 @@
 		</div>
 	</div>
 	<div class="dashboard-line p-0"></div>
+
 	<div class="dashboard-shell">
 		<aside class="dashboard-leftbar border-end">
 			<div class="dashboard-leftbar-top">
@@ -73,20 +74,21 @@
 					<i class="bi bi-diagram-3"></i>
 					<span class="text-muted sidebar-small-desc">Flows</span>
 				</button>
+
 				<div class="dashboard-line"></div>
 
 				<button
 					class="btn dashboard-leftbar-btn d-flex flex-column align-items-center gap-1"
 					type="button"
-					aria-label="Flows"
-					data-dashboard-tab="flows"
+					aria-label="More"
+					data-dashboard-tab="more"
 				>
 					<span class="material-symbols-outlined text-muted"> view_cozy </span>
 				</button>
 			</div>
 		</aside>
 
-		<aside class="dashboard-sidebar border-end">
+		<aside class="dashboard-sidebar border-end" id="dashboardSidebar">
 			<div class="dashboard-sidebar-head">
 				<div class="d-flex align-items-center justify-content-between gap-2">
 					<button
@@ -102,11 +104,15 @@
 				<div class="dashboard-sidebar-actions">
 					<div class="dashboard-sidebar-actions">
 						<div class="dashboard-iconrow ms-auto">
-							<i class="bi bi-plus-lg"></i>
+							<i class="bi bi-plus-lg fs-4" id="dashboardPlusIcon"></i>
 
 							<div class="search-input">
 								<i class="bi bi-search search-icon"></i>
-								<input type="text" placeholder="Search collections" />
+								<input
+									type="text"
+									id="dashboardQuickSearch"
+									placeholder="Search collections"
+								/>
 							</div>
 						</div>
 					</div>
@@ -140,13 +146,13 @@
 			<div class="dashboard-sidebar-body">
 				<div class="dashboard-panel active" data-dashboard-panel="collections">
 					<div class="dashboard-section">
-						<div class="dashboard-section-title">Collections</div>
-
 						<div class="dashboard-tree">
 							<button
 								class="btn dashboard-treeitem d-flex align-items-center justify-content-start gap-2"
 								type="button"
 								data-dashboard-open="collection-1"
+								aria-expanded="false"
+								aria-controls="collection-1"
 							>
 								<span class="dashboard-caret">
 									<span class="material-symbols-outlined fs-6">
@@ -154,108 +160,40 @@
 									</span>
 								</span>
 
-								<span class="dashboard-treelabel text-truncate">
+								<span
+									class="dashboard-treelabel text-truncate"
+									id="dashboardTreeLabel"
+								>
 									My Collection
 								</span>
 							</button>
 
-							<div class="dashboard-treechildren d-none" id="collection-1">
-								<button class="btn dashboard-subitem" type="button">
-									<span class="dashboard-subicon">
-										<i class="bi bi-file-earmark-text"></i>
-									</span>
-									<span class="text-truncate">Requests</span>
-								</button>
-
-								<button class="btn dashboard-subitem" type="button">
-									<span class="dashboard-subicon">
-										<i class="bi bi-braces"></i>
-									</span>
-									<span class="text-truncate">APIs</span>
-								</button>
-
-								<button class="btn dashboard-subitem" type="button">
-									<span class="dashboard-subicon">
-										<i class="bi bi-key"></i>
-									</span>
-									<span class="text-truncate">Auth</span>
-								</button>
-							</div>
+				
 						</div>
 					</div>
-
-					<div class="dashboard-divider"></div>
 				</div>
 
 				<div class="dashboard-panel" data-dashboard-panel="environments">
 					<div class="dashboard-section">
 						<div class="dashboard-section-title">Environments</div>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-plus-circle"></i>
-							</span>
-							<span>Create environment</span>
-						</button>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-folder2-open"></i>
-							</span>
-							<span>Manage environments</span>
-						</button>
 					</div>
 				</div>
 
 				<div class="dashboard-panel" data-dashboard-panel="history">
 					<div class="dashboard-section">
 						<div class="dashboard-section-title">History</div>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-clock"></i>
-							</span>
-							<span>Recent requests</span>
-						</button>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-trash3"></i>
-							</span>
-							<span>Clear history</span>
-						</button>
 					</div>
 				</div>
 
 				<div class="dashboard-panel" data-dashboard-panel="flows">
 					<div class="dashboard-section">
 						<div class="dashboard-section-title">Flows</div>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-diagram-2"></i>
-							</span>
-							<span>Open flows</span>
-						</button>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-plus-square"></i>
-							</span>
-							<span>Create flow</span>
-						</button>
 					</div>
 				</div>
 
 				<div class="dashboard-panel" data-dashboard-panel="more">
 					<div class="dashboard-section">
 						<div class="dashboard-section-title">More</div>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-gear"></i>
-							</span>
-							<span>Preferences</span>
-						</button>
-						<button class="btn dashboard-linkrow" type="button">
-							<span class="dashboard-linkicon">
-								<i class="bi bi-info-circle"></i>
-							</span>
-							<span>About</span>
-						</button>
 					</div>
 				</div>
 			</div>

@@ -1,9 +1,31 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
-</html>
+<link rel="stylesheet" href="../../styles/rightsidebar.css" />
+<aside class="dashboard-rightbar" aria-label="Right sidebar" id="rightbar">
+	<button
+		class="btn dashboard-rightbar-toggle"
+		type="button"
+		aria-label="Open right sidebar"
+		id="rightbarToggle"
+		aria-expanded="false"
+	>
+		<i class="bi bi-layout-sidebar-inset-reverse"></i>
+	</button>
+
+	<div class="dashboard-rightbar-panel" id="rightbarPanel">
+		<button class="btn dashboard-rightbar-btn" type="button" aria-label="List">
+			<i class="bi bi-list-ul"></i>
+		</button>
+
+		<button class="btn dashboard-rightbar-btn" type="button" aria-label="Docs">
+			<i class="bi bi-file-text"></i>
+		</button>
+
+		<button class="btn dashboard-rightbar-btn" type="button" aria-label="Code">
+			<i class="bi bi-code-slash"></i>
+		</button>
+
+		<button class="btn dashboard-rightbar-btn" type="button" aria-label="Info">
+			<i class="bi bi-info-circle"></i>
+		</button>
+	</div>
+</aside>
+<script src="../../scripts/rightsidebar.js"></script>

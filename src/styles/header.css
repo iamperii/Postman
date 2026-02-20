@@ -1,3 +1,150 @@
+/* Search overlay panel */
+.pm-search-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 3000;
+}
+
+.pm-search-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+.pm-search-panel {
+	position: absolute;
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+	overflow: hidden;
+	min-width: 280px;
+	max-width: 960px;
+}
+
+.pm-search-panel-inner {
+	padding: 10px 12px 12px;
+}
+
+.pm-search-filters {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.pm-chip {
+	border: 0;
+	background: #f3f4f6;
+	border-radius: 10px;
+	padding: 8px 12px;
+	font-size: 14px;
+	color: #111827;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.pm-chip i {
+	font-size: 12px;
+	color: #6b7280;
+}
+
+.pm-search-divider {
+	margin: 12px 0;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+
+.pm-search-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.pm-search-action {
+	width: 100%;
+	border: 0;
+	background: transparent;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 10px;
+	border-radius: 10px;
+	text-align: left;
+	color: #111827;
+}
+
+.pm-search-action:hover {
+	background: #f7f7f7;
+}
+
+.pm-search-action i {
+	font-size: 18px;
+	color: #6b7280;
+	width: 22px;
+	display: inline-flex;
+	justify-content: center;
+}
+
+.pm-search-section-title {
+	margin-top: 14px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #6b7280;
+}
+
+.pm-search-recent-row {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 10px;
+	border-radius: 10px;
+}
+
+.pm-search-recent-row:hover {
+	background: #f7f7f7;
+}
+
+.pm-method {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2px 8px;
+	border-radius: 6px;
+	border: 1px solid rgba(16, 185, 129, 0.35);
+	color: rgb(16, 185, 129);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.pm-recent-title {
+	font-size: 14px;
+	font-weight: 600;
+	color: #111827;
+}
+
+.pm-recent-sub {
+	font-size: 12px;
+	color: #6b7280;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex-wrap: wrap;
+}
+
+.pm-dot {
+	opacity: 0.6;
+}
+
+.pm-recent-time {
+	font-size: 12px;
+	color: #9ca3af;
+	white-space: nowrap;
+}
+
 .dashboard-header {
 	position: sticky;
 	top: 0;
@@ -52,11 +199,17 @@
 }
 
 .dashboard-searchinput:focus {
-	box-shadow: none;
+	box-shadow: none !important;
+	border: none !important;
 }
 #pmNav {
-	gap: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: clamp(16px, 4vw, 80px);
 }
+
 .dashboard-kbd {
 	background: transparent;
 	border: 0;
@@ -91,12 +244,13 @@
 .dashhboard-iconbtn {
 	padding-right: 0px !important;
 }
-.dashboard-iconbtn:nth-child(2){
+.dashboard-iconbtn:nth-child(2) {
 	padding-left: 0px !important;
 }
 .dashboard-avatar {
 	width: 28px;
 	height: 28px;
+	margin-right: 10px;
 	border-radius: 100%;
 	background: radial-gradient(circle at 30% 30%, #ffd1c2, #ff6c37);
 	border: 2px solid #fff;
@@ -115,13 +269,6 @@
 .input-group-text {
 	background-color: #fff !important;
 	border: none !important;
-}
-#pmNav {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	/* gap: clamp(10px, 200px, 60px); */
-	flex-wrap: wrap;
 }
 
 .dashboard-search {
@@ -150,9 +297,40 @@
 	.dashboard-kbd {
 		display: none;
 	}
+	.navbar-collapse {
+		width: 100%;
+	}
+
+	.navbar-nav {
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dashboard-search {
+		min-width: 0;
+	}
+
+	.dashboard-searchgroup {
+		width: 100%;
+	}
+
+	#pmNav > .d-flex {
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
 }
 
 @media (max-width: 576px) {
+	.pm-search-recent-row {
+		grid-template-columns: auto 1fr;
+	}
+
+	.pm-recent-time {
+		grid-column: 2 / -1;
+	}
 	.dashboard-searchinput {
 		padding: 10px 8px;
 	}
@@ -164,5 +342,17 @@
 
 	.dashboard-iconbtn {
 		height: 36px;
+	}
+
+	.orangeBtn {
+		width: 100%;
+	}
+
+	.dashboard-avatar {
+		margin-right: 0;
+	}
+
+	#pmNav > .d-flex {
+		justify-content: stretch;
 	}
 }
