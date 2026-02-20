@@ -31,18 +31,56 @@
 				</button>
 			</div>
 
-			<!-- NEW: Right side env selector -->
-			<div class="dashboard-top-right">
+			<!-- Right sidebar  -->
+			<aside
+				class="dashboard-rightbar"
+				aria-label="Right sidebar"
+				id="rightbar"
+			>
 				<button
-					class="btn dashboard-envbtn"
+					class="btn dashboard-rightbar-toggle"
 					type="button"
-					aria-label="Environment"
+					aria-label="Open right sidebar"
+					id="rightbarToggle"
+					aria-expanded="false"
 				>
-					<i class="bi bi-slash-circle"></i>
-					<span>No environment</span>
-					<i class="bi bi-chevron-down dashboard-envchev"></i>
+					<i class="bi bi-layout-sidebar-inset-reverse"></i>
 				</button>
-			</div>
+
+				<div class="dashboard-rightbar-panel" id="rightbarPanel">
+					<button
+						class="btn dashboard-rightbar-btn"
+						type="button"
+						aria-label="List"
+					>
+						<i class="bi bi-list-ul"></i>
+					</button>
+
+					<button
+						class="btn dashboard-rightbar-btn"
+						type="button"
+						aria-label="Docs"
+					>
+						<i class="bi bi-file-text"></i>
+					</button>
+
+					<button
+						class="btn dashboard-rightbar-btn"
+						type="button"
+						aria-label="Code"
+					>
+						<i class="bi bi-code-slash"></i>
+					</button>
+
+					<button
+						class="btn dashboard-rightbar-btn"
+						type="button"
+						aria-label="Info"
+					>
+						<i class="bi bi-info-circle"></i>
+					</button>
+				</div>
+			</aside>
 		</div>
 
 		<div class="dashboard-workspace-head">
@@ -219,7 +257,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- NEW: Right sidebar -->
 </main>
 
 <script src="../../scripts/workspacemain.js"></script>

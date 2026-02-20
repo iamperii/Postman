@@ -1,83 +1,84 @@
 body {
-  margin: 0;
-  font-family: system-ui, Arial;
-  background: #fff !important;
+	margin: 0;
+	font-family: system-ui, Arial;
+	background: #fff !important;
+	width: 100vw;
+	height: 100vh;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 12px 16px;
-  border-bottom: 1px solid #e6e6e6;
-  height: 57px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 12px 16px;
+	border-bottom: 1px solid #e6e6e6;
+	height: 57px;
 }
 
 .icon-btn {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .layout {
-  --sidebar-w: 400px;
-  display: grid;
-  grid-template-columns: var(--sidebar-w) 1fr;
-  min-height: calc(100vh - 57px);
+	--sidebar-w: 400px;
+	display: grid;
+	grid-template-columns: var(--sidebar-w) 1fr;
+	min-height: calc(100vh - 57px);
 }
 
 .sidebar {
-  border-right: 1px solid #e6e6e6;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
+	border-right: 1px solid #e6e6e6;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-width: 0;
 }
 
 .sidebar a,
 .topnav a {
-  text-decoration: none;
-  color: #222;
-  padding: 8px 10px;
-  border-radius: 8px;
+	text-decoration: none;
+	color: #222;
+	padding: 8px 10px;
+	border-radius: 8px;
 }
 
-
 .content {
-  padding: 16px;
-  min-width: 0;
+	padding: 16px;
+	min-width: 0;
 }
 
 .layout.sidebar-collapsed {
-  --sidebar-w: 0px;
+	--sidebar-w: 0px;
 }
 
 .layout.sidebar-collapsed .sidebar {
-  padding: 0;
-  overflow: hidden;
-  border-right: none;
+	padding: 0;
+	overflow: hidden;
+	border-right: none;
 }
 
 @media (max-width: 900px) {
-  .layout {
-    --sidebar-w: 0px;
-    grid-template-columns: 1fr;
-  }
+	.layout {
+		--sidebar-w: 0px;
+		grid-template-columns: 1fr;
+	}
 
-  .sidebar {
-    position: fixed;
-    top: 57px;
-    left: 0;
-    bottom: 0;
-    width: 340px;
-    background: #fff;
-    transform: translateX(0);
-    transition: transform 180ms ease;
-    z-index: 1050;
-  }
+	.sidebar {
+		position: fixed;
+		top: 57px;
+		left: 0;
+		bottom: 0;
+		width: 340px;
+		background: #fff;
+		transform: translateX(0);
+		transition: transform 180ms ease;
+		z-index: 1050;
+	}
 
-  .layout.sidebar-collapsed .sidebar {
-    transform: translateX(-100%);
-    padding: 12px;
-    border-right: 1px solid #e6e6e6;
-  }
+	.layout.sidebar-collapsed .sidebar {
+		transform: translateX(-100%);
+		padding: 12px;
+		border-right: 1px solid #e6e6e6;
+	}
 }

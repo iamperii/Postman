@@ -29,10 +29,6 @@
   border: 0;
 }
 
-.dashboard-footer-link:hover {
-  background: #f3f4f6;
-  color: #111827;
-}
 
 @media (max-width: 991.98px) {
   .dashboard-footer-right {
