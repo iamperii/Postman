@@ -1,5 +1,3 @@
-// header.js (REPLACE ALL)
-
 let overlayOpen = false;
 
 function getEls() {
@@ -46,7 +44,6 @@ function closeSearchOverlay() {
 	overlayOpen = false;
 }
 
-// Ctrl/Cmd + K (query every time; header sonradan gəlsə də işləyir)
 window.addEventListener('keydown', (e) => {
 	const isMac = navigator.platform.toUpperCase().includes('MAC');
 	const isCmdK = isMac && e.metaKey && e.key.toLowerCase() === 'k';
@@ -66,7 +63,6 @@ window.addEventListener('keydown', (e) => {
 	}
 });
 
-// Focus/click delegation (listener input gəlmədən də işləyəcək)
 document.addEventListener(
 	'focusin',
 	(e) => {
@@ -80,13 +76,11 @@ document.addEventListener(
 	(e) => {
 		const t = e.target;
 
-		// input click
 		if (t && t.id === 'pmSearch') {
 			openSearchOverlay();
 			return;
 		}
 
-		// backdrop click -> close
 		if (t && t.matches && t.matches('[data-pm-search-close]')) {
 			closeSearchOverlay();
 			getEls().searchInput?.blur();
@@ -96,7 +90,6 @@ document.addEventListener(
 	true,
 );
 
-// Keep open when clicking inside panel
 document.addEventListener(
 	'click',
 	(e) => {
@@ -107,7 +100,6 @@ document.addEventListener(
 	true,
 );
 
-// reposition on resize/scroll
 window.addEventListener('resize', () => {
 	if (!overlayOpen) return;
 	const { searchGroup, panel } = getEls();

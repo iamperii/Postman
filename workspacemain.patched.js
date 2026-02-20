@@ -25,22 +25,10 @@ rightbarToggle?.addEventListener('click', () => {
 
 const aboutInput = document.getElementById('aboutSummary');
 const aboutCount = document.getElementById('aboutCount');
-const aboutWrap = document.querySelector('.dashboard-charwrap');
-
-const ABOUT_MAX = 140;
 
 function updateAboutCount() {
 	if (!aboutInput || !aboutCount) return;
-	if (aboutInput.value.length > ABOUT_MAX) {
-		aboutInput.value = aboutInput.value.slice(0, ABOUT_MAX);
-	}
-
-	const len = aboutInput.value.length;
-	aboutCount.textContent = String(len);
-
-	const atLimit = len >= ABOUT_MAX;
-	aboutWrap?.classList.toggle('is-limit', atLimit);
-	aboutInput.classList.toggle('is-limit', atLimit);
+	aboutCount.textContent = String(aboutInput.value.length);
 }
 
 aboutInput?.addEventListener('input', updateAboutCount);

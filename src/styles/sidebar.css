@@ -189,12 +189,62 @@
 
 .dashboard-tree {
 	display: flex;
-	flex-direction: column;
 	gap: 2px;
 }
 
-.dashboard-treeitem{
-	border:none !important;
+.dashboard-treeitem {
+	border: none !important;
+}
+.dashboard-treeitem {
+	position: relative;
+}
+
+.dashboard-treeactions {
+	margin-left: auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		opacity 120ms ease,
+		visibility 120ms ease;
+}
+
+.dashboard-treeitem:hover .dashboard-treeactions,
+.dashboard-treeitem:focus-within .dashboard-treeactions {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.dashboard-treeaction {
+	border: 0;
+	background: transparent;
+	width: 26px;
+	height: 26px;
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #6b7280;
+	padding: 0;
+}
+
+.dashboard-treeaction:hover {
+	background: #e5e7eb;
+	color: #111827;
+}
+
+.dashboard-treeaction .material-symbols-outlined {
+	font-size: 18px;
+	line-height: 1;
+}
+.dashboard-treeitem[data-dashboard-open='collection-1']:hover,
+.dashboard-treeitem[data-dashboard-open='collection-1']:focus-visible {
+	background: #e5e7eb;
 }
 .dashboard-treeitem,
 .dashboard-subitem,
@@ -237,7 +287,6 @@
 
 .dashboard-treelabel {
 	font-size: 13px;
-	font-weight: 600;
 }
 
 .dashboard-treechildren {

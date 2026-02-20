@@ -1,5 +1,5 @@
 .dashboard-rightbar {
-	position: sticky; /* stays visible while scrolling (inside main grid column) */
+	position: sticky;
 	top: 12px;
 	height: calc(100vh - 24px);
 	width: 56px;
@@ -10,7 +10,7 @@
 .dashboard-rightbar-panel {
 	width: 44px;
 	display: flex;
-	flex-direction: column; /* flex-col */
+	flex-direction: column;
 	gap: 10px;
 	padding: 8px 0;
 	background: #fff;

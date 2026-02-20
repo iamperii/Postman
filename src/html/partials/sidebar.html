@@ -104,7 +104,7 @@
 				<div class="dashboard-sidebar-actions">
 					<div class="dashboard-sidebar-actions">
 						<div class="dashboard-iconrow ms-auto">
-							<i class="bi bi-plus-lg fs-5" id="dashboardPlusIcon"></i>
+							<i class="bi bi-plus-lg fs-4" id="dashboardPlusIcon"></i>
 
 							<div class="search-input">
 								<i class="bi bi-search search-icon"></i>
@@ -147,28 +147,56 @@
 				<div class="dashboard-panel active" data-dashboard-panel="collections">
 					<div class="dashboard-section">
 						<div class="dashboard-tree">
-							<button
-								class="btn dashboard-treeitem d-flex align-items-center justify-content-start gap-2"
-								type="button"
-								data-dashboard-open="collection-1"
-								aria-expanded="false"
-								aria-controls="collection-1"
-							>
-								<span class="dashboard-caret">
-									<span class="material-symbols-outlined fs-6">
-										chevron_right
-									</span>
-								</span>
-
-								<span
-									class="dashboard-treelabel text-truncate"
-									id="dashboardTreeLabel"
+							<div class="d-flex align-items-center justify-content-between gap-5">
+								<button
+									class="btn dashboard-treeitem d-flex align-items-center justify-content-start gap-2"
+									type="button"
+									data-dashboard-open="collection-1"
+									aria-expanded="false"
+									aria-controls="collection-1"
 								>
-									My Collection
-								</span>
-							</button>
+									<span class="dashboard-caret">
+										<span class="material-symbols-outlined fs-6">
+											chevron_right
+										</span>
+									</span>
 
-				
+									<span
+										class="dashboard-treelabel text-truncate w-100"
+										id="dashboardTreeLabel"
+									>
+										My Collection
+									</span>
+								</button>
+								<span class="dashboard-treeactions">
+									<button
+										class="dashboard-treeaction"
+										type="button"
+										data-tree-action="add"
+										aria-label="Add"
+									>
+										<span class="material-symbols-outlined">add</span>
+									</button>
+
+									<button
+										class="dashboard-treeaction"
+										type="button"
+										data-tree-action="star"
+										aria-label="Star"
+									>
+										<span class="material-symbols-outlined">star_outline</span>
+									</button>
+
+									<button
+										class="dashboard-treeaction"
+										type="button"
+										data-tree-action="more"
+										aria-label="More"
+									>
+										<span class="material-symbols-outlined">more_horiz</span>
+									</button>
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>

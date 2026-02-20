@@ -1,17 +1,14 @@
 let __pmSidebarBound = false;
 
 function bindSidebar() {
-	// sidebar partial inject olunubsa, elementlər gec gəlir — ona görə burda yoxlayırıq
 	const sidebar = document.getElementById('dashboardSidebar');
 	const shell = document.querySelector('.dashboard-shell');
 
 	if (!sidebar || !shell) return false;
 
-	// 2 dəfə bind olmasın
 	if (__pmSidebarBound) return true;
 	__pmSidebarBound = true;
 
-	// --- UI references (id lazım deyil)
 	const quickSearch = document.getElementById('dashboardQuickSearch');
 	const plusIcon = document.getElementById('dashboardPlusIcon');
 
@@ -113,4 +110,15 @@ const __pmObserver = new MutationObserver(() => {
 __pmObserver.observe(document.documentElement, {
 	childList: true,
 	subtree: true,
+});
+
+document.addEventListener('click', (e) => {
+	const action = e.target.closest('[data-tree-action]');
+	if (!action) return;
+
+	e.preventDefault();
+	e.stopPropagation();
+
+	const type = action.getAttribute('data-tree-action');
+
 });
