@@ -94,10 +94,6 @@
 	min-width: 0;
 }
 
-.dashboard-main-grid .dashboard-center {
-	min-width: 0;
-}
-
 .dashboard-right {
 	width: 300px;
 	flex: 0 0 300px;
@@ -123,7 +119,7 @@
 .dashboard-head-actions {
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: 10px;
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	font-size: 14px !important;
@@ -182,6 +178,16 @@
 	border: 1px solid #e5e7eb;
 }
 
+.dashboard-vdivider {
+	width: 1px;
+	height: 22px;
+	background: #e6e6e6;
+	flex: 0 0 1px;
+	pointer-events: none;
+	user-select: none;
+	opacity: 1;
+}
+
 .dashboard-tabs {
 	display: flex;
 	align-items: center;
@@ -190,6 +196,9 @@
 }
 
 .dashboard-tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
 	padding: 8px 2px;
 	border-radius: 10px;
 	border: 0;
@@ -206,6 +215,51 @@
 
 .dashboard-tab:hover {
 	color: #111827;
+}
+
+.tab-title {
+	line-height: 1;
+}
+
+.tab-close {
+	width: 18px;
+	height: 18px;
+	border-radius: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	line-height: 1;
+	color: #9ca3af;
+	cursor: pointer;
+	user-select: none;
+}
+
+.dashboard-tab:hover .tab-close {
+	color: #111827;
+}
+
+.tab-close:hover {
+	background: #f3f4f6;
+}
+
+.dashboard-tab-add,
+.dashboard-tab.tab-add {
+	margin-left: auto;
+	padding: 6px 10px;
+	border-radius: 10px;
+	color: #6b7280;
+}
+
+.dashboard-tab-add:hover,
+.dashboard-tab.tab-add:hover {
+	color: #111827;
+	background: #f3f4f6;
+}
+
+.tab-plus {
+	font-size: 16px;
+	line-height: 1;
 }
 
 .dashboard-panel-main {
@@ -270,11 +324,12 @@
 	gap: 10px;
 	font-size: 13px;
 	color: #2563eb;
-	&:hover {
-		cursor: pointer;
-		text-decoration: underline;
-		color: #2563eb;
-	}
+}
+
+.dashboard-linkrow-main:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #2563eb;
 }
 
 .dashboard-linkicon-main {
@@ -319,7 +374,6 @@
 	font-size: 12px;
 	color: #9ca3af;
 
-	/* hidden by default; shown only when the summary input is focused */
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
@@ -359,7 +413,6 @@
 }
 
 .dashboard-about-input.is-limit {
-	/* optional visual hint when limit is reached */
 	border-color: #ef4444;
 }
 
@@ -431,73 +484,11 @@
 	color: #6b7280;
 }
 
-.dashboard-tab {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-}
-
-.tab-title {
-	line-height: 1;
-}
-
-.tab-close {
-	width: 18px;
-	height: 18px;
-	border-radius: 6px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 16px;
-	line-height: 1;
-	color: #9ca3af;
-	cursor: pointer;
-	user-select: none;
-}
-
-.dashboard-tab:hover .tab-close {
-	color: #111827;
-}
-
-.tab-close:hover {
-	background: #f3f4f6;
-}
-
-.dashboard-tab-add {
-	margin-left: auto;
-	padding: 6px 10px;
-	border-radius: 10px;
-	color: #6b7280;
-}
-
-.dashboard-tab-add:hover {
-	color: #111827;
-	background: #f3f4f6;
-}
-
-.tab-plus {
-	font-size: 16px;
-	line-height: 1;
-}
-.dashboard-head-actions {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-
-.dashboard-vdivider {
-	width: 1px;
-	height: 22px;
-	background: #e6e6e6;
-	flex: 0 0 1px;
-	pointer-events: none;
-	user-select: none;
-	opacity: 1;
-}
 @media (max-width: 992px) {
 	.dashboard-rightbar {
 		display: none;
 	}
+
 	.dashboard-main-grid {
 		flex-direction: column;
 	}

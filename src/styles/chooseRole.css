@@ -1,150 +1,147 @@
 body {
-  background: linear-gradient(90deg, rgb(250, 240, 218), #ffffff) !important;
-  background-attachment: fixed;
+	background: linear-gradient(90deg, rgb(250, 240, 218), #ffffff) !important;
+	background-attachment: fixed;
 }
 
 .welcome-container {
-  display: flex;
-  align-items: flex-start;
-  gap: clamp(24px, 20vw, 400px);
-  padding: clamp(24px, 6vw, 90px) clamp(16px, 6vw, 60px);
+	display: flex;
+	align-items: flex-start;
+	gap: clamp(24px, 20vw, 400px);
+	padding: clamp(24px, 6vw, 90px) clamp(16px, 6vw, 60px);
 }
 
 .brand {
-  flex: 0 0 auto;
+	flex: 0 0 auto;
 }
 
 .postmanLogo {
-  max-width: 50px;
-  width: 100%;
-  height: auto;
+	max-width: 50px;
 }
 
 .welcome {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: 100%;
-  width: 100%;
-  max-width: 720px;
+	flex: 1;
+	width: 100%;
+	height: 100%;
+	max-width: 720px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .welcomeHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
 }
 
 .welcomeHeader h1 {
-  font-size: clamp(22px, 2.4vw, 30px);
-  line-height: 1.2;
+	font-size: clamp(22px, 2.4vw, 30px);
+	line-height: 1.2;
 }
 
 .form-control {
-  border: 1px #6b7280 solid;
-  min-height: 40px;
-  padding: 10px 12px;
-  font-size: 14px;
-  border-radius: 6px !important;
+	border: 1px #6b7280 solid;
+	min-height: 40px;
+	padding: 10px 12px;
+	font-size: 14px;
+	border-radius: 6px !important;
 }
+
 .cardDesc {
-  margin-bottom: 5px;
-  font-weight: 700;
+	margin-bottom: 5px;
+	font-weight: 700;
 }
+
 .options-btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
 .option-button {
-  flex: 0 0 auto;
-  align-self: flex-end;
-  padding: 14px 20px;
-  max-width: fit-content;
-  white-space: nowrap;
-  padding: 12px 14px;
-  background: #fff;
-  border: none;
-  border-radius: 6px;
-  text-align: left;
-  margin-top: auto;
+	flex: 0 0 auto;
+	align-self: flex-end;
+	margin-top: auto;
+	max-width: fit-content;
+	white-space: nowrap;
+	padding: 12px 14px;
+	background: #fff;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	text-align: left;
 }
 
 .option-button:focus,
-.option-button:focus-visible {
-  background-color: rgb(255, 108, 55);
-  border-color: rgb(255, 108, 55);
-  color: white;
-  outline: none;
+.option-button:focus-visible,
+.option-button.is-selected {
+	background-color: rgb(255, 108, 55);
+	border-color: rgb(255, 108, 55);
+	color: #fff;
+	outline: none;
 }
 
 .orangeBtn {
-  align-self: flex-end;
-  justify-self: flex-end;
-  min-width: 100px;
-  margin-top: 50px;
-  padding: 10px 18px;
+	align-self: flex-end;
+	justify-self: flex-end;
+	min-width: 100px;
+	margin-top: 50px;
+	padding: 10px 18px;
 }
 
-@media (max-width: 992px) {
-  .welcome-container {
-    gap: 32px;
-  }
-
-  .postmanLogo {
-    max-width: 150px;
-  }
-}
 .orangeBtn.is-disabled,
 .orangeBtn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-  pointer-events: none;
+	opacity: 0.45;
+	cursor: not-allowed;
+	pointer-events: none;
 }
 
-.option-button.is-selected {
-  background-color: rgb(255, 108, 55);
-  border-color: rgb(255, 108, 55);
-  color: #fff;
+/* ========= Responsive ========= */
+@media (max-width: 992px) {
+	.welcome-container {
+		gap: 32px;
+	}
+
+	.postmanLogo {
+		max-width: 150px;
+	}
 }
 
 @media (max-width: 768px) {
-  .welcome-container {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 24px 16px;
-    gap: 20px;
-  }
+	.welcome-container {
+		flex-direction: column;
+		align-items: stretch;
+		padding: 24px 16px;
+		gap: 20px;
+	}
 
-  .brand {
-    display: flex;
-    justify-content: flex-start;
-  }
+	.brand {
+		display: flex;
+		justify-content: flex-start;
+	}
 
-  .welcome {
-    max-width: 100%;
-    min-height: auto;
-  }
+	.welcome {
+		max-width: 100%;
+		min-height: auto;
+	}
 
-  .option-button {
-    white-space: normal;
-  }
+	.option-button {
+		white-space: normal;
+	}
 
-  .orangeBtn {
-    width: 100%;
-    align-self: stretch;
-  }
+	.orangeBtn {
+		width: 100%;
+		align-self: stretch;
+	}
 }
 
 @media (max-width: 360px) {
-  .welcomeHeader h1 {
-    font-size: 20px;
-  }
+	.welcomeHeader h1 {
+		font-size: 20px;
+	}
 
-  .option-button {
-    padding: 10px;
-    font-size: 14px;
-  }
+	.option-button {
+		padding: 10px;
+		font-size: 14px;
+	}
 }

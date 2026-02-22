@@ -1,314 +1,249 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #f2f2f2;
-  --card: #ffffff;
-  --accent: rgb(255, 108, 55);
-  --text: #111827;
-  --muted: #6b7280;
-  --radius: 12px;
-  --border-color: rgba(0, 0, 0, 0.16);
-}
-
 body {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(360deg, rgb(250, 240, 218), #ffffff);
-  font-family: Inter, "Open Sans", sans-serif !important;
-}
-
-.brand {
-  display: flex;
-  justify-content: center;
-  padding: 18px 12px 10px;
-}
-
-.postmanLogo {
-  width: clamp(46px, 6vw, 65px);
-  height: auto;
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(360deg, rgb(250, 240, 218), #ffffff);
+	font-family: Inter, 'Open Sans', sans-serif !important;
 }
 
 .page {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 8px 12px 18px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 8px 12px 18px;
 }
 
 .signInCard {
-  background: var(--card);
-  width: min(100%, 350px);
-  border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
+	background: var(--card);
+	width: min(100%, 350px);
+	border-radius: var(--radius);
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
-  color: var(--text);
-  font-size: 18px;
+	color: var(--text);
+	font-size: 18px;
 }
 
 .form-label {
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--muted);
+	font-size: 14px;
+	font-weight: bold;
+	color: var(--muted);
 }
+
 .showPasswordBtn {
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--muted);
-  cursor: pointer;
-  &:hover {
-    color: rgb(78, 78, 252);
-  }
+	font-size: 12px;
+	font-weight: bold;
+	color: var(--muted);
+	cursor: pointer;
 }
 
-.form-control {
-  min-height: 40px;
-  padding: 10px 12px;
-  font-size: 14px;
-  border-radius: 10px;
-}
-
-.orangeBtn {
-  background: var(--accent);
-  border: 0;
-  border-radius: 6px;
-  padding: 10px 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-}
-
-.orangeBtn:focus-visible {
-  outline: 3px solid rgba(255, 108, 55, 0.35);
-  outline-offset: 2px;
+.showPasswordBtn:hover {
+	color: rgb(78, 78, 252);
 }
 
 .social-login {
-  width: 100%;
+	width: 100%;
 }
 
 .divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--muted);
-  font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--muted);
+	font-size: 14px;
 }
 
 .divider::before,
 .divider::after {
-  content: "";
-  height: 1px;
-  background: #e5e7eb;
-  flex: 1;
+	content: '';
+	height: 1px;
+	background: #e5e7eb;
+	flex: 1;
 }
 
 .socialLogins {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .socialBtn {
-  width: 100%;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  gap: 70px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  cursor: pointer;
+	width: 100%;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	gap: 70px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 .socialBtn:hover {
-  background: #fafafa;
+	background: #fafafa;
 }
 
 .socialBtn:focus-visible {
-  outline: 3px solid rgba(255, 108, 55, 0.25);
-  outline-offset: 2px;
+	outline: 3px solid rgba(255, 108, 55, 0.25);
+	outline-offset: 2px;
 }
 
 .social-icon {
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
+	width: 20px;
+	height: 20px;
+	flex: 0 0 20px;
 }
 
 .socialBtn span {
-  font-size: 14px;
-  line-height: 1.2;
-  flex: 1;
-  text-align: left;
+	font-size: 14px;
+	line-height: 1.2;
+	flex: 1;
+	text-align: left;
 }
 
 .socialBtn.justify-content-center span {
-  text-align: center;
+	text-align: center;
 }
 
 .language {
-  width: 100%;
-  font-size: 14px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+	width: 100%;
+	font-size: 14px;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .langBtn {
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  padding: 6px 10px;
-  border-radius: 8px;
+	border: 0;
+	background: transparent;
+	color: var(--muted);
+	padding: 6px 10px;
+	border-radius: 8px;
 }
 
 .langBtn:focus {
-  text-decoration: underline orange;
+	text-decoration: underline orange;
 }
 
 .langBtn:focus-visible {
-  outline: 3px solid rgba(255, 108, 55, 0.25);
-  outline-offset: 2px;
+	outline: 3px solid rgba(255, 108, 55, 0.25);
+	outline-offset: 2px;
 }
 
 .footer {
-  color: var(--muted);
-  font-size: 12px;
-  text-align: center;
-  padding: 14px 12px 16px;
+	color: var(--muted);
+	font-size: 12px;
+	text-align: center;
+	padding: 14px 12px 16px;
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-}
-
-.error {
-  color: red;
-  font-size: 10px;
-  line-height: 1.2;
-  margin-top: 4px;
-  display: block !important;
-}
-
-.error:empty {
-  display: none !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
 }
 
 input.invalid {
-  border-color: red;
+	border-color: red;
 }
 
 .form-check,
 .forgotpass {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .links {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 .signInError {
-  display: none;
-  margin-top: 12px;
-  margin-bottom: 10px;
-  padding: 12px 14px;
-  font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #ffecec;
-  color: #111;
+	display: none;
+	margin-top: 12px;
+	margin-bottom: 10px;
+	padding: 12px 14px;
+	font-size: 14px;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	background: #ffecec;
+	color: #111;
 }
 
 .signInError.success {
-  display: block;
-  padding: 20px;
-  background: #eaffea;
+	display: block;
+	padding: 20px;
+	background: #eaffea;
 }
 
 .signInError.error {
-  display: block;
-  background: #ffecec;
+	display: block;
+	background: #ffecec;
 }
 
 .cardTitle {
-  font-size: clamp(18px, 3.2vw, 22px);
-  text-align: center;
+	font-size: clamp(18px, 3.2vw, 22px);
+	text-align: center;
 }
-.cardDesc {
-  margin-top: 16px;
-  color: var(--muted);
-  font-size: 10px;
-  font-size: clamp(13px, 2.4vw, 14px);
-  line-height: 1.6;
-}
+
 .card form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .card label.form-label {
-  font-size: 12px;
-  color: gray;
+	font-size: 12px;
+	color: gray;
 }
+
 @media (max-width: 576px) {
-  .signInCard {
-    width: 100%;
-  }
+	.signInCard {
+		width: 100%;
+	}
 
-  .socialBtn {
-    padding: 12px;
-    gap: 50px;
-  }
+	.socialBtn {
+		padding: 12px;
+		gap: 50px;
+	}
 
-  .socialBtn span {
-    font-size: 13px;
-  }
+	.socialBtn span {
+		font-size: 13px;
+	}
 
-  .language {
-    flex-direction: column;
-    align-items: stretch;
-  }
+	.language {
+		flex-direction: column;
+		align-items: stretch;
+	}
 
-  .langBtn {
-    width: 100%;
-    text-align: center;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-  }
+	.langBtn {
+		width: 100%;
+		text-align: center;
+		background: #ffffff;
+		border: 1px solid #e5e7eb;
+	}
 }
 
 @media (max-width: 360px) {
-  .title {
-    font-size: 16px;
-  }
+	.title {
+		font-size: 16px;
+	}
 
-  .form-control {
-    min-height: 38px;
-  }
+	.form-control {
+		min-height: 38px;
+	}
 
-  .socialBtn {
-    gap: 50px;
-  }
-  .socialBtn span {
-    font-size: 12.5px;
-  }
+	.socialBtn {
+		gap: 50px;
+	}
+
+	.socialBtn span {
+		font-size: 12.5px;
+	}
 }
 
 .form-control:has(+ .error:not(:empty)) {
-  border-color: red;
+	border-color: red;
 }

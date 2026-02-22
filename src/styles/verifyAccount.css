@@ -1,193 +1,193 @@
 header.brand {
-  margin-top: 30px;
+	margin-top: 30px;
 }
 
 .verifyPage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 16px 16px;
-  max-width: 1180px;
-  margin: 0 auto;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 24px 16px 16px;
 }
 
 .verifyCard {
-  width: 100%;
-  max-width: 420px;
-  background: var(--card);
-  border-radius: 10px;
-  border: none;
-  padding: clamp(18px, 4vw, 30px) !important;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+	width: 100%;
+	max-width: 420px;
+	background: var(--card);
+	border-radius: 10px;
+	border: none;
+	padding: clamp(18px, 4vw, 30px) !important;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
 
 .verifyCard form {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .verifyCard input {
-  border-radius: 8px;
+	border-radius: 8px;
 }
 
 .signedEmail {
-  font-weight: 700 !important;
-  word-break: break-word;
+	font-weight: 700 !important;
+	word-break: break-word;
 }
 
 .orangeBtn {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .cardDesc {
-  font-weight: 600;
-  margin-bottom: 3px;
+	font-weight: 600;
+	margin-bottom: 3px;
 }
 
 .cardTitle {
-  font-size: clamp(22px, 4vw, 28px);
-  line-height: 1.2;
+	font-size: clamp(22px, 4vw, 28px);
+	line-height: 1.2;
 }
 
 .cardMessage {
-  color: var(--muted);
-  font-size: clamp(12px, 2.6vw, 14px);
-  line-height: 1.6;
+	color: var(--muted);
+	font-size: clamp(12px, 2.6vw, 14px);
+	line-height: 1.6;
 }
 
 .verifyForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 8px;
 }
 
 .verifyForm input {
-  width: 100%;
-  min-height: 44px;
-  padding: 10px 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+	width: 100%;
+	min-height: 44px;
+	padding: 10px 12px;
+	font-size: 14px;
+	border-radius: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .error {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 .resendLink {
-  font-size: 13px;
+	font-size: 13px;
 }
 
 .resendRow {
-  padding: 0 16px 24px;
-  text-align: center;
+	padding: 0 16px 24px;
+	text-align: center;
 }
 
 .resendRow a {
-  display: inline-block;
-  max-width: 100%;
-  word-break: break-word;
+	display: inline-block;
+	max-width: 100%;
+	word-break: break-word;
 }
 
 .resendLink.disabled {
-  pointer-events: none;
-  opacity: 0.6;
-  text-decoration: none;
+	pointer-events: none;
+	opacity: 0.6;
+	text-decoration: none;
 }
 
 .orangeBtn:disabled,
 .orangeBtn[disabled] {
-  background: #cfcfcf !important;
-  border-color: #cfcfcf !important;
-  color: #ffffff !important;
-  cursor: not-allowed;
-  opacity: 1;
+	background: #cfcfcf !important;
+	border-color: #cfcfcf !important;
+	color: #ffffff !important;
+	cursor: not-allowed;
+	opacity: 1;
 }
 
 .orangeBtn:disabled:hover {
-  filter: none;
-  transform: none;
+	filter: none;
+	transform: none;
 }
 
 .orangeBtn .btnSpinner {
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  border-top-color: #fff;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: middle;
-  background-color: rgb(255, 108, 55);
-  animation: btnSpin 0.8s linear infinite;
+	width: 18px;
+	height: 18px;
+	border: 2px solid rgba(255, 255, 255, 0.45);
+	border-top-color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: rgb(255, 108, 55);
+	animation: btnSpin 0.8s linear infinite;
 }
 
-.orangeBtn[aria-busy="true"] {
-  background-color: rgb(255, 108, 55) !important;
-  border-color: rgb(255, 108, 55) !important;
-  color: #fff !important;
-  opacity: 1 !important;
+.orangeBtn[aria-busy='true'] {
+	background-color: rgb(255, 108, 55) !important;
+	border-color: rgb(255, 108, 55) !important;
+	color: #fff !important;
+	opacity: 1 !important;
 }
 
-.orangeBtn[aria-busy="true"] .btnSpinner {
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  border-top-color: #fff;
+.orangeBtn[aria-busy='true'] .btnSpinner {
+	border: 2px solid rgba(255, 255, 255, 0.45);
+	border-top-color: #fff;
 }
 
 @keyframes btnSpin {
-  to {
-    transform: rotate(360deg);
-  }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .visually-hidden {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
 @media (max-width: 768px) {
-  header.brand {
-    margin-top: 20px;
-  }
+	header.brand {
+		margin-top: 20px;
+	}
 
-  .verifyPage {
-    padding: 16px 12px 10px;
-  }
+	.verifyPage {
+		padding: 16px 12px 10px;
+	}
 
-  .verifyCard {
-    max-width: 520px;
-  }
+	.verifyCard {
+		max-width: 520px;
+	}
 
-  .verifyForm input {
-    min-height: 46px;
-    font-size: 15px;
-  }
+	.verifyForm input {
+		min-height: 46px;
+		font-size: 15px;
+	}
 }
 
 @media (max-width: 420px) {
-  .verifyCard {
-    padding: 16px !important;
-  }
+	.verifyCard {
+		padding: 16px !important;
+	}
 
-  .cardTitle {
-    font-size: 22px;
-  }
+	.cardTitle {
+		font-size: 22px;
+	}
 
-  .cardMessage {
-    font-size: 12px;
-  }
+	.cardMessage {
+		font-size: 12px;
+	}
 
-  .verifyForm input {
-    min-height: 44px;
-    font-size: 14px;
-  }
+	.verifyForm input {
+		min-height: 44px;
+		font-size: 14px;
+	}
 }

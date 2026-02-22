@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg: #f2f2f2;
+	--card: #ffffff;
+	--accent: rgb(255, 108, 55);
+	--text: #111827;
+	--muted: #6b7280;
+	--radius: 12px;
+	--border-color: rgba(0, 0, 0, 0.16);
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	min-height: 100vh;
+	font-family: Inter, 'Open Sans', system-ui, Arial, sans-serif;
+}
+
+.brand {
+	display: flex;
+	justify-content: center;
+	padding: 18px 12px 10px;
+}
+
+.postmanLogo {
+	width: clamp(46px, 6vw, 65px);
+	height: auto;
+}
+
+/* Shared form control baseline (page css override edə bilər) */
+.form-control {
+	min-height: 40px;
+	padding: 10px 12px;
+	font-size: 14px;
+	border-radius: 6px;
+}
+
+/* Shared primary button (size/padding override ayrı fayllarda qala bilər) */
+.orangeBtn {
+	background: var(--accent);
+	border: 0;
+	border-radius: 6px;
+	padding: 10px 12px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+}
+
+.orangeBtn:focus-visible {
+	outline: 3px solid rgba(255, 108, 55, 0.35);
+	outline-offset: 2px;
+}
+
+.orangeBtn.is-disabled,
+.orangeBtn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+/* Shared text blocks */
+.cardDesc {
+	margin-top: 16px;
+	color: var(--muted);
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+/* Shared errors */
+.error {
+	color: red;
+	font-size: 10px;
+	line-height: 1.2;
+	margin-top: 4px;
+	display: block !important;
+}
+
+.error:empty {
+	display: none !important;
+}

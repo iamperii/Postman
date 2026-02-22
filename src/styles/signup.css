@@ -1,145 +1,148 @@
 .signupPage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  padding: 50px 16px 24px;
-  max-width: 1180px;
-  margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 80px;
+	padding: 50px 16px 24px;
+	max-width: 1180px;
+	margin: 0 auto;
 }
 
 .leftSection {
-  width: 100%;
-  max-width: 520px;
-  display: flex;
-  flex-direction: column;
+	width: 100%;
+	max-width: 520px;
+	display: flex;
+	flex-direction: column;
 }
 
 .rightSection {
-  width: 100%;
-  max-width: 400px;
-  padding: 30px;
-  font-size: 14px;
+	width: 100%;
+	max-width: 400px;
+	padding: 30px;
+	font-size: 14px;
 }
 
 .benefits {
-  list-style-image: url("../assets/star.svg");
-  padding-left: 22px;
-  margin: 8px 0 16px;
-  font-size: 16px;
+	list-style-image: url('../assets/star.svg');
+	padding-left: 22px;
+	margin: 8px 0 16px;
+	font-size: 16px;
 }
 
 .benefits li {
-  padding: 6px 0;
+	padding: 6px 0;
 }
 
 .signupImage {
-  width: 100%;
-  max-width: 420px;
-  opacity: 0.5;
-  margin-top: 18px;
+	width: 100%;
+	max-width: 420px;
+	opacity: 0.5;
+	margin-top: 18px;
 }
 
 .signupCard {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
+	background: var(--card);
+	border-radius: var(--radius);
+	padding: 18px;
+	display: flex;
+	flex-direction: column;
 }
 
 .rightSection form {
-  border: none;
-  label{
-    font-size: 12px;
-  }
+	border: none;
+}
+
+.rightSection form label {
+	font-size: 12px;
 }
 
 .checkboxes {
-  font-size: 12px;
-  color: var(--muted);
+	font-size: 12px;
+	color: var(--muted);
 }
 
 .checkboxes .form-check-label {
-  line-height: 1.35;
+	line-height: 1.35;
 }
 
 .checkboxes .terms {
-  margin: 0;
-  font-size: 12px;
+	margin: 0;
+	font-size: 12px;
 }
-.signInbtn{
-    margin-top: 1rem;
-    text-align: center;
-}
-@media (max-width: 992px) {
-  .signupPage {
-    gap: 40px;
-  }
 
-  .leftSection {
-    max-width: 460px;
-  }
+.signInbtn {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+@media (max-width: 992px) {
+	.signupPage {
+		gap: 40px;
+	}
+
+	.leftSection {
+		max-width: 460px;
+	}
 }
 
 @media (max-width: 768px) {
-  .signupPage {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 18px;
-    padding: 20px 12px 18px;
-  }
+	.signupPage {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 18px;
+		padding: 20px 12px 18px;
+	}
 
-  .leftSection,
-  .rightSection {
-    max-width: 100%;
-  }
+	.leftSection,
+	.rightSection {
+		max-width: 100%;
+	}
 
-  .signupImage {
-    max-width: 520px;
-  }
+	.signupImage {
+		max-width: 520px;
+	}
 }
 
 @media (max-width: 576px) {
-  .rightSection {
-    padding: 12px;
-  }
+	.rightSection {
+		padding: 12px;
+	}
 
-  .signupCard {
-    width: 100%;
-    padding: 18px 16px;
-    border-radius: 16px;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-  }
+	.signupCard {
+		width: 100%;
+		padding: 18px 16px;
+		border-radius: 16px;
+		box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+	}
 
-  .rightSection form {
-    margin: 0;
-  }
+	.rightSection form {
+		margin: 0;
+	}
 
-  .rightSection .form-label {
-    font-size: 12px;
-    margin-bottom: 6px;
-  }
+	.rightSection .form-label {
+		font-size: 12px;
+		margin-bottom: 6px;
+	}
 
-  .rightSection .form-control {
-    padding: 10px 12px;
-    font-size: 14px;
-    border-radius: 12px;
-  }
+	.rightSection .form-control {
+		padding: 10px 12px;
+		font-size: 14px;
+		border-radius: 12px;
+	}
 
-  .checkboxes {
-    font-size: 12px;
-    line-height: 1.4;
-  }
+	.checkboxes {
+		font-size: 12px;
+		line-height: 1.4;
+	}
 
-  .signInbtn {
-    margin-top: 12px;
-  }
+	.signInbtn {
+		margin-top: 12px;
+	}
 
-  .signInbtn .btn,
-  .rightSection button[type="submit"] {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 12px;
-  }
+	.signInbtn .btn,
+	.rightSection button[type='submit'] {
+		width: 100%;
+		padding: 10px 12px;
+		border-radius: 12px;
+	}
 }

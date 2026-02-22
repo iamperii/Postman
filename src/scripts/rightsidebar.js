@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (!toggleBtn || !panel || !rightbar) return;
 
-	// Default: bağlı
 	rightbar.classList.remove('open');
 	toggleBtn.setAttribute('aria-expanded', 'false');
 
